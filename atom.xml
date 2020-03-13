@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://algerkong.github.io</id>
+    <id>http://8ys5t2.coding-pages.com</id>
     <title>Alger</title>
-    <updated>2020-03-13T03:34:30.746Z</updated>
+    <updated>2020-03-13T03:38:28.222Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://algerkong.github.io"/>
-    <link rel="self" href="http://algerkong.github.io/atom.xml"/>
+    <link rel="alternate" href="http://8ys5t2.coding-pages.com"/>
+    <link rel="self" href="http://8ys5t2.coding-pages.com/atom.xml"/>
     <subtitle>春风得意马蹄疾,一日看尽长安花.</subtitle>
-    <logo>http://algerkong.github.io/images/avatar.png</logo>
-    <icon>http://algerkong.github.io/favicon.ico</icon>
+    <logo>http://8ys5t2.coding-pages.com/images/avatar.png</logo>
+    <icon>http://8ys5t2.coding-pages.com/favicon.ico</icon>
     <rights>All rights reserved 2020, Alger</rights>
     <entry>
         <title type="html"><![CDATA[正则表达式学习🏓]]></title>
-        <id>http://algerkong.github.io/zheng-ze-biao-da-shi-xue-xi/</id>
-        <link href="http://algerkong.github.io/zheng-ze-biao-da-shi-xue-xi/">
+        <id>http://8ys5t2.coding-pages.com/zheng-ze-biao-da-shi-xue-xi/</id>
+        <link href="http://8ys5t2.coding-pages.com/zheng-ze-biao-da-shi-xue-xi/">
         </link>
         <updated>2020-03-13T02:58:10.000Z</updated>
         <summary type="html"><![CDATA[<p>正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。</p>
@@ -230,8 +230,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ ASP.NET用PlaceHolder动态添加组件实现单选题目]]></title>
-        <id>http://algerkong.github.io/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/</id>
-        <link href="http://algerkong.github.io/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/">
+        <id>http://8ys5t2.coding-pages.com/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/</id>
+        <link href="http://8ys5t2.coding-pages.com/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/">
         </link>
         <updated>2020-03-13T02:55:36.000Z</updated>
         <summary type="html"><![CDATA[<p>利用<code>PlaceHolder</code>控件实现一个包含单项选择题的测试页面，其中题目信息包含于数组中。</p>
@@ -333,8 +333,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[JavaScript基础- 数据类型🔨]]></title>
-        <id>http://algerkong.github.io/javascript-ji-chu-shu-ju-lei-xing/</id>
-        <link href="http://algerkong.github.io/javascript-ji-chu-shu-ju-lei-xing/">
+        <id>http://8ys5t2.coding-pages.com/javascript-ji-chu-shu-ju-lei-xing/</id>
+        <link href="http://8ys5t2.coding-pages.com/javascript-ji-chu-shu-ju-lei-xing/">
         </link>
         <updated>2020-03-13T02:53:28.000Z</updated>
         <summary type="html"><![CDATA[<p>ES5中有六种数据类型<br>
@@ -434,8 +434,8 @@ js中的数据类型为字面变量 以它的值来定义数据类型</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[JavaScript----Vue.js基础学习 🚀]]></title>
-        <id>http://algerkong.github.io/javascript-vuejs-ji-chu-xue-xi/</id>
-        <link href="http://algerkong.github.io/javascript-vuejs-ji-chu-xue-xi/">
+        <id>http://8ys5t2.coding-pages.com/javascript-vuejs-ji-chu-xue-xi/</id>
+        <link href="http://8ys5t2.coding-pages.com/javascript-vuejs-ji-chu-xue-xi/">
         </link>
         <updated>2020-03-13T02:51:17.000Z</updated>
         <summary type="html"><![CDATA[<p>Vue 是一套用于构建用户界面的渐进式框架Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。能够为复杂的单页应用提供驱动。</p>
@@ -1227,8 +1227,8 @@ new Vue({
     </entry>
     <entry>
         <title type="html"><![CDATA[ Android计算器案例🤖]]></title>
-        <id>http://algerkong.github.io/android-ji-suan-qi-an-li/</id>
-        <link href="http://algerkong.github.io/android-ji-suan-qi-an-li/">
+        <id>http://8ys5t2.coding-pages.com/android-ji-suan-qi-an-li/</id>
+        <link href="http://8ys5t2.coding-pages.com/android-ji-suan-qi-an-li/">
         </link>
         <updated>2020-03-13T02:49:26.000Z</updated>
         <summary type="html"><![CDATA[<p>使用简单的网格布局管理器来实现界面🧨<br>
@@ -1477,8 +1477,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     </entry>
     <entry>
         <title type="html"><![CDATA[教你用代码写一个实时疫情图😷]]></title>
-        <id>http://algerkong.github.io/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/</id>
-        <link href="http://algerkong.github.io/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/">
+        <id>http://8ys5t2.coding-pages.com/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/</id>
+        <link href="http://8ys5t2.coding-pages.com/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/">
         </link>
         <updated>2020-03-13T02:45:31.000Z</updated>
         <summary type="html"><![CDATA[<p>🤧这两天疫情越来越严重，各个大公司都做了<strong>实时疫情图</strong>，这里来教一下大家如何用代码来实现</p>
@@ -1556,8 +1556,8 @@ $list = json_decode($result[1]);
     </entry>
     <entry>
         <title type="html"><![CDATA[CSS动画制作旋转木马🦄]]></title>
-        <id>http://algerkong.github.io/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/</id>
-        <link href="http://algerkong.github.io/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">
+        <id>http://8ys5t2.coding-pages.com/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/</id>
+        <link href="http://8ys5t2.coding-pages.com/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">
         </link>
         <updated>2020-02-14T02:44:30.000Z</updated>
         <summary type="html"><![CDATA[<p>主要用到了<code>animation</code>动画  <code>transform</code>  旋转<code>perspective</code>产生透视效果 控制好图片的距离，理解三维模型，可以很简单的做出旋转木马。</p>
@@ -1651,8 +1651,8 @@ $list = json_decode($result[1]);
     </entry>
     <entry>
         <title type="html"><![CDATA[HTML+CSS 模仿商品展示 💻]]></title>
-        <id>http://algerkong.github.io/htmlcss-mo-fang-shang-pin-zhan-shi/</id>
-        <link href="http://algerkong.github.io/htmlcss-mo-fang-shang-pin-zhan-shi/">
+        <id>http://8ys5t2.coding-pages.com/htmlcss-mo-fang-shang-pin-zhan-shi/</id>
+        <link href="http://8ys5t2.coding-pages.com/htmlcss-mo-fang-shang-pin-zhan-shi/">
         </link>
         <updated>2020-02-13T02:35:11.000Z</updated>
         <summary type="html"><![CDATA[<p>💁今天我们来实现一个简单的<strong><strong>商品展示</strong></strong>小页面</p>
