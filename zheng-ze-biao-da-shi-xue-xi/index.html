@@ -1,196 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
 <head>
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<title>Alger</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+  <meta charset="UTF-8" />
+<title>正则表达式学习🏓 - Alger</title>
 <meta name="description" content="春风得意马蹄疾,一日看尽长安花.
-"/>
-<meta name="keywords" content="春风得意马蹄疾,一日看尽长安花.
-"/>
+">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="shortcut icon" href="http://47.93.91.138:5500/favicon.ico">
+<link type='text/css' rel='stylesheet' href='http://47.93.91.138:5500/styles/main.css' media='screen' />
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" href="http://47.93.91.138:5500/styles/main.css">
+<script type="text/javascript" src='http://47.93.91.138:5500/media/scripts/jquery.js'></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
 
-<!-- Modernizr JS -->
-<script src="http://47.93.91.138:5500/media/scripts/modernizr-2.6.2.min.js"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-<scripts src="http://47.93.91.138:5500/media/scripts/respond.min.js"></scripts>
-<![endif]-->
-
-<!-- Comment -->
-
-
-
-<!-- katex -->
-<!--<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet">-->
-
-<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-
-
-
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
 </head>
+
 <body>
-    <div id="fh5co-offcanvas">
-    <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
-        <span><i class="icon-cross3"></i> <span>Close</span></span>
-    </a>
-    <div class="fh5co-bio">
-        <figure>
-            <img src="http://47.93.91.138:5500/images/avatar.png" alt="Alger"
-                 class="img-responsive">
-        </figure>
-        <a href="http://47.93.91.138:5500/post/about/"><h3 class="heading">ABOUT ME</h3></a>
-        <h2>Alger</h2>
-        <p>春风得意马蹄疾,一日看尽长安花.
-</p>
-        <ul class="fh5co-social">
-            
-                <li>
-                    
-                        <a href="https://github.com/algerkong" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a href="https://weibo.com/u/5857592033" target="_blank">
-                            <i class="fab fa-weibo"></i>
-                        </a>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-        </ul>
-    </div>
+  <div class="layout theme-dark">
+    <div class="layout-header">
 
-    <div class="fh5co-menu">
+	<div class="layout-header-main">
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
 
-        <!-- 标签 -->
-        <div class="fh5co-box">
-            <a href="http://47.93.91.138:5500/tags/"><h3 class="heading">👉标签</h3></a>
-            <ul>
-                
-                    <li><a href="http://47.93.91.138:5500/G4NR921eB/">Share</a></li>
-                
-                    <li><a href="http://47.93.91.138:5500/NQvaoSPkJ/">ASP.NET</a></li>
-                
-                    <li><a href="http://47.93.91.138:5500/He-D_m5QM/">JavaScript</a></li>
-                
-                    <li><a href="http://47.93.91.138:5500/p9SDW22Ljl/">Vue.js</a></li>
-                
-                    <li><a href="http://47.93.91.138:5500/uXar5IwUu/">Android</a></li>
-                
-                    <li><a href="http://47.93.91.138:5500/FoJvIOEID/">HTML</a></li>
-                
-                    <li><a href="http://47.93.91.138:5500/Io18193yza/">CSS</a></li>
-                
-            </ul>
-        </div>
-    </div>
+					<div class="navbar">
+
+						<div class="logo">
+							<a href="http://47.93.91.138:5500">
+								<img class="logo"
+									src="http://47.93.91.138:5500/media/images/site_avatar.png?v=1598515889654"
+									alt="">
+							</a>
+						</div>
+
+						<div class="menu d-md-inline-block d-none">
+							<ul class="layout-navigation-list">
+								
+								<li class="layout-navigation-item"><a title="首页"
+										href="/">首页</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="归档"
+										href="/archives">归档</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="标签"
+										href="/tags">标签</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="关于"
+										href="/about">关于</a>
+								</li>
+								
+							</ul>
+						</div>
+
+						<div class="item d-md-inline-block d-none">
+							<div class="search-icon">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</div>
+						</div>
+
+
+
+						<div class="d-md-inline-block d-none">
+							<div class="search-lightbox">
+								<div class="search-body">
+
+									<form id="gridea-search-form" data-update="1598515889654" action="/search/" class="search-form">
+										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
+										<button type="submit" class="submit" aria-label="Submit">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</form>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="nav d-md-none d-inline-block">
+							<div class="trigger">
+								<i class="fa fa-bars layout-btn-toggle" aria-hidden="true"></i>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+</div>
+    <div class="layout-collapse d-md-none">
+	<div class="layout-collapse-main">
+		<ul class="layout-collapse-list">
+			
+			<li class="layout-collapse-item"><a title="首页" href="/">首页</a></li>
+			
+			<li class="layout-collapse-item"><a title="归档" href="/archives">归档</a></li>
+			
+			<li class="layout-collapse-item"><a title="标签" href="/tags">标签</a></li>
+			
+			<li class="layout-collapse-item"><a title="关于" href="/about">关于</a></li>
+			
+
+		</ul>
+	</div>
 </div>
 
-<header id="fh5co-header">
-    <div class="container-fluid">
-        <div class="row">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-            <ul class="fh5co-social">
-                
-                    <li>
-                        <a href="/"
-                        
-                        >
-                            首页
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/archives"
-                        
-                        >
-                            归档
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/tags"
-                        
-                        >
-                            标签
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/about"
-                        
-                        >
-                            关于
-                        </a>
-                    </li>
-                
-            </ul>
-            <div class="col-lg-12 col-md-12 text-center">
-                <h1 id="fh5co-logo">
-                    <a href="http://47.93.91.138:5500">Alger </a>
-                </h1>
-            </div>
-        </div>
-    </div>
-</header>
+    <div class="layout-content">
+      <div class="layout-content-main">
+        <div class="container">
+          <div class="row justify-content-lg-center">
+            <div class="col-12 col-lg-9">
+              <div class="layout-post">
+                <div class="layout-post-body">
+                  <div class="row">
 
-
-    <!--  <a href="#" class="fh5co-post-prev"><span>👈 Prev</span></a>-->
-    <!--  <a href="#" class="fh5co-post-next"><span>Next 👉</span></a>-->
-
-    <!-- 等gridea出自定义页面功能再优化一下 -->
-    
-        <div class="container-fluid">
-    <div class="row fh5co-post-entry single-entry">
-        <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-            <figure class="animate-box">
-                
-                    <img src="https://s2.ax1x.com/2020/03/04/3om0zV.jpg" alt="正则表达式学习🏓" class="img-responsive">
-                
-            </figure>
-            <span class="fh5co-meta animate-box">
-                
-                    <div class="tag-container">
-                        
-                            <a href="http://47.93.91.138:5500/G4NR921eB/" class="tag">Share, </a>
-                        
-                    </div>
-                
-            </span>
-            <h2 class="fh5co-article-title animate-box">正则表达式学习🏓</h2>
-            <ol class="breadcrumb fh5co-meta fh5co-date animate-box" style="margin-bottom:0; background-color:#f8f9fa">
-                <li>2020-03-13</li>
-                <li>2128字</li>
-                <li>9 min read</li>
-            </ol>
-
-            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
-                <div class="row">
-                    <div class="col-md-12 animate-box post-content">
-                        <p> <p>正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。</p>
+                    <div class="col-12 col-lg-10">
+                      <div class="layout-post-main m-right m-md-right">
+                        <div class="layout-post-header">
+                          <h1 class="layout-post-title">正则表达式学习🏓</h1>
+                          <div class="layout-post-meta">
+                            <div class="item">
+                               <a href="http://47.93.91.138:5500/G4NR921eB/" class="post--keyword"
+                                data-title="Share" data-type="post_tag" data-term-id="39">Share</a>
+                              
+                            </div>
+                            <div class="item">
+                              <span>2020-03-13</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="layout-post-content">
+                          <div class="layout-post-item">
+                            
+                            <p class="with-img"><img src="https://s2.ax1x.com/2020/03/04/3om0zV.jpg"
+                                class="attachment-full size-full wp-post-image" alt="正则表达式学习🏓" /></p>
+                            
+                            <p>正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。</p>
 <p>正则表达式是繁琐的，但它是强大的，学会之后的应用会让你除了提高效率外，会给你带来绝对的成就感。</p>
 <!-- more -->
 <p>下面是一长串我不一定看的东西</p>
@@ -397,52 +356,82 @@
 <p>好了就这样，简单不（我觉得不简单）✨</p>
 <p>下期见🎃</p>
 </blockquote>
- </p>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12 animate-box">
-                        
-                            <div class="next-post">
-                                <div class="next">下一篇</div>
-                                <a href="http://47.93.91.138:5500/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/">
-                                    <h3 class="post-title">
-                                         ASP.NET用PlaceHolder动态添加组件实现单选题目
-                                    </h3>
-                                </a>
+                          </div>
+                        </div>
+                        <div class="layout-post-social">
+                          <div class="item reader">
+                            <div id="/post/zheng-ze-biao-da-shi-xue-xi/" class="leancloud-visitors view"
+                              data-flag-title="正则表达式学习🏓">
+                              <span class="post-meta-item-text">阅读 </span>
+                              <span class="leancloud-visitors-count"></span>
                             </div>
+                          </div>
+                        </div>
+
+                        <div class="layout-post-navigation">
+                          <div class="navigation-list">
+                            
+                            <div class="post-card row">
+                              
+                              <div class="card-content col-8 col-md-9">
+                                <div class="card-body">
+                                  <div class="header">
+                                    <a href="http://47.93.91.138:5500/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/" class="title">
+                                      <h4> ASP.NET用PlaceHolder动态添加组件实现单选题目</h4>
+                                    </a>
+                                  </div>
+                                  <div class="inner d-none d-sm-block">
+                                    <div class="abstract">
+                                      <p>利用<code>PlaceHolder</code>控件实现一个包含单项选择题的测试页面，其中题目信息包含于数组中。</p>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="item"><span>下一篇</span></div>
+                                  <div class="item">2020-03-13</div>
+                                </div>
+                              </div>
+                              <div class="card-thumb col-4 col-md-3">
+                                <div class="thumb">
+                                  <a href="http://47.93.91.138:5500/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/"
+                                    style="background-image: url('https://s2.ax1x.com/2020/02/29/3yZRo9.png');"></a>
+                                </div>
+                              </div>
+                              
+                            </div>
+                            
+                          </div>
+                        </div>
+
+                        <div class="layout-comments"></div>
                         
+                        <script type="text/javascript" src='http://47.93.91.138:5500/media/scripts/zan.js'></script>
+<script type="text/javascript" src='http://47.93.91.138:5500/media/scripts/av-min.js'></script>
+<script type="text/javascript" src='http://47.93.91.138:5500/media/scripts/Valine.min.js'></script>
+
+<script>
+  var valine = new Valine();
+  valine.init({
+    el: '.layout-comments',
+    appId: 'zSod8O6f9ppLFYxB5PgGNotJ-gzGzoHsz',
+    appKey: 'zPFYmL2RAeARE6sTWFnHfJg7',
+    notify: false,
+    verify: false,
+    visitor: true,
+    avatar: 'mp',
+    placeholder: '加入讨论...'
+  })
+</script>
+                        
+                      </div>
                     </div>
-                </div>
 
-                <div class="row">
-    <div class="col-md-12 animate-box">
-        
-    </div>
-</div>
-
-            </div>
-
-        </article>
-    </div>
-</div>
-
-    
-
-    <!-- 返回顶部 -->
-    <div class="back-to-top">
-    
-        <a href="#!" id="tool-toc" class="hidden-xs hidden-sm">
-            <i class="fa fa-map"></i>
-        </a>
-        <br>
-    
-    <a href="#top" class="hidden-xs hidden-sm"><i class="fa fa-paper-plane"></i></a>
-</div>
-
-<div class="post-toc animated fadeInRight hidden-xs hidden-sm" style="display: none;">
-    <ul class="markdownIt-TOC">
+                    <div class="col-12 col-lg-2 d-none d-lg-block">
+                      <div class="layout-post-sidebar">
+                        <div class="layout-sidebar-item">
+                          <ul class="markdownIt-TOC">
 <li>
 <ul>
 <li><a href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%97%E7%AC%A6">表达式字符</a></li>
@@ -451,67 +440,84 @@
 </li>
 </ul>
 
-</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="layout-totop d-none"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
 
-    
-<footer id="fh5co-footer">
-  <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
-</footer>
+    	<div class="layout-footer">
 
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+					<div class="footer">
+						<div class="row">
+							<div class="col-12 col-md-9">
+								<div class="footer-copy">
+									
+									<span>© 2018-09-10 </span>
+									<a href="http://47.93.91.138:5500" title="Alger">Alger</a>
+									<span class="px-2">⋅</span>
+									
+									Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+									<div class="footer-icp d-none d-sm-inline-block">
+										<span class="px-2">⋅</span>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3 d-none d-md-block">
+								<div class="footer-links">
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!-- jQuery -->
-<script src="http://47.93.91.138:5500/media/scripts/jquery.min.js"></script>
-<!-- img lazy load -->
-<script src="http://47.93.91.138:5500/media/scripts/jquery.lazyload.min.js"></script>
-<!-- jQuery Easing -->
-<script src="http://47.93.91.138:5500/media/scripts/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="http://47.93.91.138:5500/media/scripts/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="http://47.93.91.138:5500/media/scripts/jquery.waypoints.min.js"></script>
-<!-- Main JS -->
-<script src="http://47.93.91.138:5500/media/scripts/main.js"></script>
-<!-- Md5 Min JS -->
-<script src="http://47.93.91.138:5500/media/scripts/md5.min.js"></script>
-<!-- katex -->
-<!--<script src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>-->
-<!-- highlight -->
-<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+	</div>
 
+	<script type="text/javascript" src='http://47.93.91.138:5500/media/scripts/main.js'></script>
+	
+	<script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?10269f9b0a4f16f8a55ea03a248b0493";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	
 
-<script type="application/javascript">
-    // 代码高亮
-    hljs.initHighlightingOnLoad();
-
-    // img 懒加载
-    $(function () {
-        $("img.lazy").lazyload({
-            effect: "fadeIn",  // 懒加载动画
-            threshold: 180  // 在图片距离屏幕180px时提前载入
-        });
-        // tooltip
-        $('[data-toggle="tooltip"]').tooltip();
-
-        // 目录
-        $('#tool-toc').click(function () {
-            $('.post-toc').toggle();
-        });
-    });
-
-    
-        var allImg = $("img");
-        allImg.on("contextmenu", function () {
-            return false;
-        });
-        allImg.on("dragstart", function () {
-            return false;
-        });
-    
-</script>
-
-
-
-
+  </div>
 </body>
+
 </html>
