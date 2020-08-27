@@ -1,302 +1,406 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>Alger&#39;s blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="春风得意马蹄疾,一日看尽长安花.
+"/>
+<meta name="keywords" content="春风得意马蹄疾,一日看尽长安花.
+"/>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
-<link rel="shortcut icon" href="http://47.93.91.138:5500/favicon.ico?v=1598517178146">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<link rel="shortcut icon" href="http://47.93.91.138:5500/favicon.ico">
+
 <link rel="stylesheet" href="http://47.93.91.138:5500/styles/main.css">
 
+<!-- Modernizr JS -->
+<script src="http://47.93.91.138:5500/media/scripts/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+<scripts src="http://47.93.91.138:5500/media/scripts/respond.min.js"></scripts>
+<![endif]-->
+
+<!-- Comment -->
 
 
 
+<!-- katex -->
+<!--<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet">-->
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
 
 
 
-    <meta name="description" content="春风得意马蹄疾,一日看尽长安花.
-">
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="http://47.93.91.138:5500">
-        <img src="http://47.93.91.138:5500/images/avatar.png?v=1598517178146" class="site-logo">
-        <h1 class="site-title">Alger&#39;s blog</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+    <div id="fh5co-offcanvas">
+    <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
+        <span><i class="icon-cross3"></i> <span>Close</span></span>
+    </a>
+    <div class="fh5co-bio">
+        <figure>
+            <img src="http://47.93.91.138:5500/images/avatar.png" alt="Alger&#39;s blog"
+                 class="img-responsive">
+        </figure>
+        <a href="http://47.93.91.138:5500/post/about/"><h3 class="heading">ABOUT ME</h3></a>
+        <h2>Alger&#39;s blog</h2>
+        <p>春风得意马蹄疾,一日看尽长安花.
+</p>
+        <ul class="fh5co-social">
+            
+                <li>
+                    
+                        <a href="https://github.com/algerkong" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a href="https://weibo.com/u/5857592033" target="_blank">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+        </ul>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      春风得意马蹄疾,一日看尽长安花.
 
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://47.93.91.138:5500/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
+    <div class="fh5co-menu">
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="http://47.93.91.138:5500/zheng-ze-biao-da-shi-xue-xi/">
-                  <h2 class="post-title">正则表达式学习🏓</h2>
-                </a>
-                <div class="post-date">
-                  2020-03-13
-                </div>
-                <div class="post-abstract">
-                  <p>正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。</p>
-<p>正则表达式是繁琐的，但它是强大的，学会之后的应用会让你除了提高效率外，会给你带来绝对的成就感。</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="http://47.93.91.138:5500/zheng-ze-biao-da-shi-xue-xi/">
-                  <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/03/04/3om0zV.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="http://47.93.91.138:5500/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/">
-                  <h2 class="post-title"> ASP.NET用PlaceHolder动态添加组件实现单选题目</h2>
-                </a>
-                <div class="post-date">
-                  2020-03-13
-                </div>
-                <div class="post-abstract">
-                  <p>利用<code>PlaceHolder</code>控件实现一个包含单项选择题的测试页面，其中题目信息包含于数组中。</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="http://47.93.91.138:5500/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/">
-                  <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/29/3yZRo9.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="http://47.93.91.138:5500/javascript-ji-chu-shu-ju-lei-xing/">
-                  <h2 class="post-title">JavaScript基础- 数据类型🔨</h2>
-                </a>
-                <div class="post-date">
-                  2020-03-13
-                </div>
-                <div class="post-abstract">
-                  <p>ES5中有六种数据类型<br>
-js中的数据类型为字面变量 以它的值来定义数据类型</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="http://47.93.91.138:5500/javascript-ji-chu-shu-ju-lei-xing/">
-                  <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/29/3sIvnJ.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="http://47.93.91.138:5500/javascript-vuejs-ji-chu-xue-xi/">
-                  <h2 class="post-title">JavaScript----Vue.js基础学习 🚀</h2>
-                </a>
-                <div class="post-date">
-                  2020-03-13
-                </div>
-                <div class="post-abstract">
-                  <p>Vue 是一套用于构建用户界面的渐进式框架Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。能够为复杂的单页应用提供驱动。</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="http://47.93.91.138:5500/javascript-vuejs-ji-chu-xue-xi/">
-                  <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/29/3yS0oT.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="http://47.93.91.138:5500/android-ji-suan-qi-an-li/">
-                  <h2 class="post-title"> Android计算器案例🤖</h2>
-                </a>
-                <div class="post-date">
-                  2020-03-13
-                </div>
-                <div class="post-abstract">
-                  <p>使用简单的网格布局管理器来实现界面🧨<br>
-然后使用java代码来实现计算器的操作🎉</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="http://47.93.91.138:5500/android-ji-suan-qi-an-li/">
-                  <div class="feature-container" style="background-image: url('https://s1.ax1x.com/2020/03/13/8u9qLn.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="http://47.93.91.138:5500/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/">
-                  <h2 class="post-title">教你用代码写一个实时疫情图😷</h2>
-                </a>
-                <div class="post-date">
-                  2020-03-13
-                </div>
-                <div class="post-abstract">
-                  <p>🤧这两天疫情越来越严重，各个大公司都做了<strong>实时疫情图</strong>，这里来教一下大家如何用代码来实现</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="http://47.93.91.138:5500/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/">
-                  <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/04/1D0mGR.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="http://47.93.91.138:5500/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">
-                  <h2 class="post-title">CSS动画制作旋转木马🦄</h2>
-                </a>
-                <div class="post-date">
-                  2020-02-14
-                </div>
-                <div class="post-abstract">
-                  <p>主要用到了<code>animation</code>动画  <code>transform</code>  旋转<code>perspective</code>产生透视效果 控制好图片的距离，理解三维模型，可以很简单的做出旋转木马。</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="http://47.93.91.138:5500/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">
-                  <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/29/3y9iCD.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="http://47.93.91.138:5500/htmlcss-mo-fang-shang-pin-zhan-shi/">
-                  <h2 class="post-title">HTML+CSS 模仿商品展示 💻</h2>
-                </a>
-                <div class="post-date">
-                  2020-02-13
-                </div>
-                <div class="post-abstract">
-                  <p>💁今天我们来实现一个简单的<strong><strong>商品展示</strong></strong>小页面</p>
-<p>用到的知识主要是<code>:hover</code>和<code>position</code></p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="http://47.93.91.138:5500/htmlcss-mo-fang-shang-pin-zhan-shi/">
-                  <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/04/1D9VhT.gif')">
-                  </div>
-                </a>
-              
-            </article>
-          
-
-          <div class="pagination-container">
-  
-  
-</div>
-
+        <!-- 标签 -->
+        <div class="fh5co-box">
+            <a href="http://47.93.91.138:5500/tags/"><h3 class="heading">👉标签</h3></a>
+            <ul>
+                
+                    <li><a href="http://47.93.91.138:5500/G4NR921eB/">Share</a></li>
+                
+                    <li><a href="http://47.93.91.138:5500/NQvaoSPkJ/">ASP.NET</a></li>
+                
+                    <li><a href="http://47.93.91.138:5500/He-D_m5QM/">JavaScript</a></li>
+                
+                    <li><a href="http://47.93.91.138:5500/p9SDW22Ljl/">Vue.js</a></li>
+                
+                    <li><a href="http://47.93.91.138:5500/uXar5IwUu/">Android</a></li>
+                
+                    <li><a href="http://47.93.91.138:5500/FoJvIOEID/">HTML</a></li>
+                
+                    <li><a href="http://47.93.91.138:5500/Io18193yza/">CSS</a></li>
+                
+            </ul>
         </div>
+    </div>
+</div>
+
+<header id="fh5co-header">
+    <div class="container-fluid">
+        <div class="row">
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+            <ul class="fh5co-social">
+                
+                    <li>
+                        <a href="/"
+                        
+                        >
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives"
+                        
+                        >
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags"
+                        
+                        >
+                            标签
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about"
+                        
+                        >
+                            关于
+                        </a>
+                    </li>
+                
+            </ul>
+            <div class="col-lg-12 col-md-12 text-center">
+                <h1 id="fh5co-logo">
+                    <a href="http://47.93.91.138:5500">Alger&#39;s blog </a>
+                </h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row fh5co-post-entry">
+
+        
+            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
+            <figure class="img-box">
+              <a href="http://47.93.91.138:5500/zheng-ze-biao-da-shi-xue-xi/">
+                
+                  <img data-original="https://s2.ax1x.com/2020/03/04/3om0zV.jpg" alt="正则表达式学习🏓" class="img-responsive img-rounded lazy">
+                
+              </a>
+            </figure>
+            <span class="fh5co-meta">
+              
+                    
+                        <a href="http://47.93.91.138:5500/G4NR921eB/" class="tag">Share, </a>
+                    
+              
+            </span>
+            <h3 class="fh5co-article-title">
+              <a href="http://47.93.91.138:5500/zheng-ze-biao-da-shi-xue-xi/">正则表达式学习🏓</a>
+            </h3>
+            <span class="fh5co-meta fh5co-date">2020-03-13</span>
+          </article>
+        
+            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
+            <figure class="img-box">
+              <a href="http://47.93.91.138:5500/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/">
+                
+                  <img data-original="https://s2.ax1x.com/2020/02/29/3yZRo9.png" alt=" ASP.NET用PlaceHolder动态添加组件实现单选题目" class="img-responsive img-rounded lazy">
+                
+              </a>
+            </figure>
+            <span class="fh5co-meta">
+              
+                    
+                        <a href="http://47.93.91.138:5500/NQvaoSPkJ/" class="tag">ASP.NET, </a>
+                    
+              
+            </span>
+            <h3 class="fh5co-article-title">
+              <a href="http://47.93.91.138:5500/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/"> ASP.NET用PlaceHolder动态添加组件实现单选题目</a>
+            </h3>
+            <span class="fh5co-meta fh5co-date">2020-03-13</span>
+          </article>
+        
+            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
+            <figure class="img-box">
+              <a href="http://47.93.91.138:5500/javascript-ji-chu-shu-ju-lei-xing/">
+                
+                  <img data-original="https://s2.ax1x.com/2020/02/29/3sIvnJ.jpg" alt="JavaScript基础- 数据类型🔨" class="img-responsive img-rounded lazy">
+                
+              </a>
+            </figure>
+            <span class="fh5co-meta">
+              
+                    
+                        <a href="http://47.93.91.138:5500/He-D_m5QM/" class="tag">JavaScript, </a>
+                    
+              
+            </span>
+            <h3 class="fh5co-article-title">
+              <a href="http://47.93.91.138:5500/javascript-ji-chu-shu-ju-lei-xing/">JavaScript基础- 数据类型🔨</a>
+            </h3>
+            <span class="fh5co-meta fh5co-date">2020-03-13</span>
+          </article>
+        
+            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
+            <figure class="img-box">
+              <a href="http://47.93.91.138:5500/javascript-vuejs-ji-chu-xue-xi/">
+                
+                  <img data-original="https://s2.ax1x.com/2020/02/29/3yS0oT.png" alt="JavaScript----Vue.js基础学习 🚀" class="img-responsive img-rounded lazy">
+                
+              </a>
+            </figure>
+            <span class="fh5co-meta">
+              
+                    
+                        <a href="http://47.93.91.138:5500/He-D_m5QM/" class="tag">JavaScript, </a>
+                    
+                        <a href="http://47.93.91.138:5500/p9SDW22Ljl/" class="tag">Vue.js, </a>
+                    
+              
+            </span>
+            <h3 class="fh5co-article-title">
+              <a href="http://47.93.91.138:5500/javascript-vuejs-ji-chu-xue-xi/">JavaScript----Vue.js基础学习 🚀</a>
+            </h3>
+            <span class="fh5co-meta fh5co-date">2020-03-13</span>
+          </article>
+        
+            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
+            <figure class="img-box">
+              <a href="http://47.93.91.138:5500/android-ji-suan-qi-an-li/">
+                
+                  <img data-original="https://s1.ax1x.com/2020/03/13/8u9qLn.jpg" alt=" Android计算器案例🤖" class="img-responsive img-rounded lazy">
+                
+              </a>
+            </figure>
+            <span class="fh5co-meta">
+              
+                    
+                        <a href="http://47.93.91.138:5500/uXar5IwUu/" class="tag">Android, </a>
+                    
+              
+            </span>
+            <h3 class="fh5co-article-title">
+              <a href="http://47.93.91.138:5500/android-ji-suan-qi-an-li/"> Android计算器案例🤖</a>
+            </h3>
+            <span class="fh5co-meta fh5co-date">2020-03-13</span>
+          </article>
+        
+            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
+            <figure class="img-box">
+              <a href="http://47.93.91.138:5500/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/">
+                
+                  <img data-original="https://s2.ax1x.com/2020/02/04/1D0mGR.png" alt="教你用代码写一个实时疫情图😷" class="img-responsive img-rounded lazy">
+                
+              </a>
+            </figure>
+            <span class="fh5co-meta">
+              
+                    
+                        <a href="http://47.93.91.138:5500/G4NR921eB/" class="tag">Share, </a>
+                    
+              
+            </span>
+            <h3 class="fh5co-article-title">
+              <a href="http://47.93.91.138:5500/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/">教你用代码写一个实时疫情图😷</a>
+            </h3>
+            <span class="fh5co-meta fh5co-date">2020-03-13</span>
+          </article>
+        
+            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
+            <figure class="img-box">
+              <a href="http://47.93.91.138:5500/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">
+                
+                  <img data-original="https://s2.ax1x.com/2020/02/29/3y9iCD.png" alt="CSS动画制作旋转木马🦄" class="img-responsive img-rounded lazy">
+                
+              </a>
+            </figure>
+            <span class="fh5co-meta">
+              
+                    
+                        <a href="http://47.93.91.138:5500/FoJvIOEID/" class="tag">HTML, </a>
+                    
+                        <a href="http://47.93.91.138:5500/Io18193yza/" class="tag">CSS, </a>
+                    
+              
+            </span>
+            <h3 class="fh5co-article-title">
+              <a href="http://47.93.91.138:5500/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">CSS动画制作旋转木马🦄</a>
+            </h3>
+            <span class="fh5co-meta fh5co-date">2020-02-14</span>
+          </article>
+        
+            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
+            <figure class="img-box">
+              <a href="http://47.93.91.138:5500/htmlcss-mo-fang-shang-pin-zhan-shi/">
+                
+                  <img data-original="https://s2.ax1x.com/2020/02/04/1D9VhT.gif" alt="HTML+CSS 模仿商品展示 💻" class="img-responsive img-rounded lazy">
+                
+              </a>
+            </figure>
+            <span class="fh5co-meta">
+              
+                    
+                        <a href="http://47.93.91.138:5500/FoJvIOEID/" class="tag">HTML, </a>
+                    
+                        <a href="http://47.93.91.138:5500/Io18193yza/" class="tag">CSS, </a>
+                    
+              
+            </span>
+            <h3 class="fh5co-article-title">
+              <a href="http://47.93.91.138:5500/htmlcss-mo-fang-shang-pin-zhan-shi/">HTML+CSS 模仿商品展示 💻</a>
+            </h3>
+            <span class="fh5co-meta fh5co-date">2020-02-13</span>
+          </article>
+        
+        <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
+
+      </div>
+
+      <div class="pagination-box animate-box">
+        
+        
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+    
+<footer id="fh5co-footer">
+  <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+</footer>
+
+
+    <!-- jQuery -->
+<script src="http://47.93.91.138:5500/media/scripts/jquery.min.js"></script>
+<!-- img lazy load -->
+<script src="http://47.93.91.138:5500/media/scripts/jquery.lazyload.min.js"></script>
+<!-- jQuery Easing -->
+<script src="http://47.93.91.138:5500/media/scripts/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="http://47.93.91.138:5500/media/scripts/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="http://47.93.91.138:5500/media/scripts/jquery.waypoints.min.js"></script>
+<!-- Main JS -->
+<script src="http://47.93.91.138:5500/media/scripts/main.js"></script>
+<!-- Md5 Min JS -->
+<script src="http://47.93.91.138:5500/media/scripts/md5.min.js"></script>
+<!-- katex -->
+<!--<script src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>-->
+<!-- highlight -->
+<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+
+
 <script type="application/javascript">
+    // 代码高亮
+    hljs.initHighlightingOnLoad();
 
-AOS.init();
+    // img 懒加载
+    $(function () {
+        $("img.lazy").lazyload({
+            effect: "fadeIn",  // 懒加载动画
+            threshold: 180  // 在图片距离屏幕180px时提前载入
+        });
+        // tooltip
+        $('[data-toggle="tooltip"]').tooltip();
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+        // 目录
+        $('#tool-toc').click(function () {
+            $('.post-toc').toggle();
+        });
+    });
 
+    
+        var allImg = $("img");
+        allImg.on("contextmenu", function () {
+            return false;
+        });
+        allImg.on("dragstart", function () {
+            return false;
+        });
+    
 </script>
-
-
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad()
-  </script>
-
 
 
 
