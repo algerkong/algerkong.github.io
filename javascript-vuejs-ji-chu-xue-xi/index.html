@@ -1,214 +1,105 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" >
 
-<head>
-    <meta charset="utf-8" />
-<title>
-    Alger&#39;s blog
-</title>
-<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-<meta http-equiv="x-dns-prefetch-control" content="on">
-<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<meta name="author" content="Alger">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<script async src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
-<link rel="stylesheet" href="http://www.myalger.ml/styles/main.css" />
-<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+<title>JavaScript----Vue.js基础学习 🚀 | Alger&#39;s blog</title>
+<meta name="description" content="春风得意马蹄疾,一日看尽长安花.
+">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/css/style.min.css" />
-        <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/tocbot.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/script.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/icon.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="http://www.myalger.ml/favicon.ico?v=1598520405188">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="http://www.myalger.ml/styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="http://www.myalger.ml">Alger&#39;s blog</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
         
-            <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@latest/CDN/js/Card/prism.min.js"></script>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@latest/CDN/css/Card/prism.min.css" />
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
-            <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
+          <li>
             
-                <!--点击特效-->
-                <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@latest/CDN/js/love.min.js"></script>
-                
-                        <!--CDN样式-->
-                        <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@latest/CDN/js/hit-kounter-lc-0.3.0.js"></script>
-                        <script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
-                        
-                            <script>
-                                (function() {
-                                    var bp = document.createElement('script');
-                                    var curProtocol = window.location.protocol.split(':')[0];
-                                    if (curProtocol === 'https') {
-                                        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-                                    } else {
-                                        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-                                    }
-                                    var s = document.getElementsByTagName("script")[0];
-                                    s.parentNode.insertBefore(bp, s);
-                                })();
-                            </script>
-                            
-                                    <script type="text/javascript">
-                                        var _hmt = _hmt || [];
-                                        (function() {
-                                            var hm = document.createElement("script");
-                                            hm.src = "https://hm.baidu.com/hm.js?10269f9b0a4f16f8a55ea03a248b0493";
-                                            var s = document.getElementsByTagName("script")[0];
-                                            s.parentNode.insertBefore(hm, s);
-                                        })();
-                                    </script>
-                                    
-</head>
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<body>
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo">
-                <a href="http://www.myalger.ml">
-                    Alger&#39;s blog
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>JavaScript----Vue.js基础学习 🚀</h1>
+            <p class="article-meta">
+              2020-03-13
+              
+                <a href="http://www.myalger.ml/He-D_m5QM/" class="badge secondary">
+                  JavaScript
                 </a>
-            </div>
-            <div id="tp-weather-widget"></div>
-            <div class="menu navbar-right">
-                
-                    <a class="menu-item" href="/">
-                        首页
-                    </a>
-                    
-                    <a class="menu-item" href="/archives">
-                        归档
-                    </a>
-                    
-                    <a class="menu-item" href="/tags">
-                        标签
-                    </a>
-                    
-                    <a class="menu-item" href="/about">
-                        关于
-                    </a>
-                    
-                        <input id="switch_default" type="checkbox" class="switch_default">
-                        <label for="switch_default" class="toggleBtn"></label>
-            </div>
-            <form id="gridea-search-form" data-update="1598520023486" action="/search/index.html">
-                <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
-            </form>
-        </div>
-    </nav>
-
-    
-        <nav class="navbar-mobile" id="nav-mobile">
-            <div class="container">
-                <div class="navbar-header">
-                    <div>
-                        <a href="http://www.myalger.ml">
-                            Alger&#39;s blog
-                        </a>
-                        <!--en-->
-                        <a id="mobile-toggle-theme-en" class="a en">&nbsp;Dark</a>
-                        <!--zh-->
-                        <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
-                    </div>
-                    <form id="gridea-search-form" data-update="1598520023486" action="/search/index.html">
-                        <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
-                    </form>
-                    <!--en-->
-                    <div class="menu-toggle" id="menu-toggle-en" onclick="mobileBtn()">&#9776; Menu</div>
-                    <!--zh-->
-                    <div class="menu-toggle" id="menu-toggle-zh" onclick="mobileBtn()">&#9776; &#x83DC;&#x5355;</div>
-
-                </div>
-                <div class="menu" id="mobile-menu">
-                    
-                        <a class="menu-item" href="/">
-                            首页
-                        </a>
-                        
-                        <a class="menu-item" href="/archives">
-                            归档
-                        </a>
-                        
-                        <a class="menu-item" href="/tags">
-                            标签
-                        </a>
-                        
-                        <a class="menu-item" href="/about">
-                            关于
-                        </a>
-                        
-                </div>
-            </div>
-        </nav>
-</header>
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementById("menu-toggle-en");
-        var toggleMenu_zh = document.getElementById("menu-toggle-zh");
-
-        var mobileMenu = document.getElementById("mobile-menu");
-        if (toggleMenu.display != "none") {
-            if (toggleMenu.classList.contains("active")) {
-                toggleMenu.classList.remove("active")
-                mobileMenu.classList.remove("active")
-            } else {
-                toggleMenu.classList.add("active")
-                mobileMenu.classList.add("active")
-            }
-        } else if (toggleMenu_zh.display != "none") {
-            if (toggleMenu_zh.classList.contains("active")) {
-                toggleMenu_zh.classList.remove("active")
-                mobileMenu.classList.remove("active")
-            } else {
-                toggleMenu_zh.classList.add("active")
-                mobileMenu.classList.add("active")
-            }
-        }
-
-    }
-</script>
-
-            <div class="main">
-                <div class="container">
-                    <article class="post-wrap">
-                        <header class="post-header">
-                            <h1 class="post-title">
-                                JavaScript----Vue.js基础学习 🚀
-                            </h1>
-                            
-                                    <!--zh-->
-                                    <div class="post-meta zh">
-                                        &#x4F5C;&#x8005;:
-                                        <a itemprop="author" rel="author" href="/">
-                                            Alger's blog
-                                        </a>
-                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-13</a></span>
-                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">18.6
-                                    &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">3389</a></span>
-                                        
-                                            <span class="post-category">&#x5206;&#x7C7B;:
-                                
-                                <a href="http://www.myalger.ml/He-D_m5QM/">JavaScript</a>
-                                
-                                <a href="http://www.myalger.ml/p9SDW22Ljl/">Vue.js</a>
-                                
-                            </span>
-                                            
-                                                阅读量:
-                                                <span data-hk-page="current"> - </span>
-                                                
-                                    </div>
-                                    
-                        </header>
-                        
-                            <img class="post-feature-image" src="https://s2.ax1x.com/2020/02/29/3yS0oT.png" alt="">
-                          
-                        <div class="post-content">
-                            <p>Vue 是一套用于构建用户界面的渐进式框架Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。能够为复杂的单页应用提供驱动。</p>
+              
+                <a href="http://www.myalger.ml/p9SDW22Ljl/" class="badge warning">
+                  Vue.js
+                </a>
+              
+            </p>
+            
+              <img src="https://s2.ax1x.com/2020/02/29/3yS0oT.png" alt="JavaScript----Vue.js基础学习 🚀">
+            
+            <div class="post-content">
+              <p>Vue 是一套用于构建用户界面的渐进式框架Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。能够为复杂的单页应用提供驱动。</p>
 <!-- more -->
 <h3 id="第一个vue项目">第一个Vue项目</h3>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
@@ -992,209 +883,165 @@ new Vue({
 &lt;/script&gt;
 </code></pre>
 
-                        </div>
-                        
-                            <div class="post-toc">
-                                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E7%AC%AC%E4%B8%80%E4%B8%AAvue%E9%A1%B9%E7%9B%AE">第一个Vue项目</a></li>
-<li><a href="#el%E6%8C%82%E8%BD%BD%E7%82%B9">el挂载点：</a></li>
-<li><a href="#data%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1">data:数据对象</a></li>
-<li><a href="#v-text%E6%8C%87%E4%BB%A4">v-text指令</a></li>
-<li><a href="#v-html%E6%8C%87%E4%BB%A4">v-html指令</a></li>
-<li><a href="#v-on%E6%8C%87%E4%BB%A4">v-on指令</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B%E8%AE%A1%E6%95%B0%E5%99%A8">案例计数器</a></li>
-<li><a href="#v-show">v-show</a></li>
-<li><a href="#v-if">v-if</a></li>
-<li><a href="#v-bind">v-bind</a></li>
-<li><a href="#%E5%9B%BE%E7%89%87%E8%BD%AE%E6%92%AD%E6%A1%88%E4%BE%8B">图片轮播案例</a></li>
-<li><a href="#v-for">v-for</a></li>
-<li><a href="#v-model">v-model</a></li>
-<li><a href="#%E8%AE%B0%E4%BA%8B%E6%9C%AC%E6%A1%88%E4%BE%8B">记事本案例</a></li>
-<li><a href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7">计算属性</a></li>
-<li><a href="#vue%E7%BB%84%E4%BB%B6">*Vue组件</a>
-<ul>
-<li><a href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1-%E7%88%B6%E5%AD%90%E9%80%9A%E4%BF%A1">组件通信--父子通信</a></li>
-<li><a href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1-%E5%AD%90%E7%88%B6%E9%80%9A%E4%BF%A1">组件通信--子父通信</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-                            </div>
-                            
-                                
-                                    
-                                            <!--zh-->
-                                            <section class="post-copyright zh">
-                                                <p class="copyright-item ">
-                                                    <span>&#x4F5C;&#x8005;:</span>
-                                                    <span>Alger's blog</span>
-                                                </p>
-
-                                                <p class="copyright-item">
-                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
-                                                    <span><a href="http://www.myalger.ml/javascript-vuejs-ji-chu-xue-xi/">http://www.myalger.ml/javascript-vuejs-ji-chu-xue-xi/</a></span>
-                                                </p>
-
-                                                <p class="copyright-item">
-                                                    <span>&#x534F;&#x8BAE;:</span>
-                                                    <span>MIT License</span>
-                                                </p>
-                                            </section>
-                                            
-                                                
-                                                    
-                                                                    <!--Share-->
-                                                                    <span style="margin-right:15px">
-                        <i class="post-share"></i>
-                        <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://www.myalger.ml/javascript-vuejs-ji-chu-xue-xi/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.myalger.ml/javascript-vuejs-ji-chu-xue-xi/&sharesource=qzone&title=JavaScript----Vue.js基础学习 🚀&pics=http://www.myalger.ml/images/avatar.png?v=1598520023486&summary=&lt;p&gt;Vue 是一套用于构建用户界面的渐进式框架Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。能够为复杂的单页应用提供驱动。&lt;/p&gt;
-"><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=http://www.myalger.ml/javascript-vuejs-ji-chu-xue-xi/&sharesource=weibo&title=JavaScript----Vue.js基础学习 🚀 + " - " + &lt;p&gt;Vue 是一套用于构建用户界面的渐进式框架Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。能够为复杂的单页应用提供驱动。&lt;/p&gt;
-&pic="http://www.myalger.ml/images/avatar.png?v=1598520023486 "><i class="fa fa-weibo "></i></a>
-
-                                                                    </span>
-                                                                    
-                                                                            <!--zh-->
-                                                                            <section class="post-tags zh ">
-                                                                                <div>
-                                                                                    <span>&#x6807;&#x7B7E;:</span>
-                                                                                    <span class="tag ">
-                        
-                        
-                        <a href="http://www.myalger.ml/He-D_m5QM/">#
-                    JavaScript
-                        </a>
-                        
-                        <a href="http://www.myalger.ml/p9SDW22Ljl/">#
-                    Vue.js
-                        </a>
-                        
-                            
-                                </span>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <a href="javascript:window.history.back();">
-                        &#x8FD4;&#x56DE;</a>
-                                                                                    <span>&dot;</span>
-                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
-                                                                                </div>
-                                                                            </section>
-
-                                                                            
-                                                                                <!---->
-                                                                                <section class="post-nav">
-                                                                                    
-                                                                                        <a class="prev" rel="prev" href="http://www.myalger.ml/javascript-ji-chu-shu-ju-lei-xing/">
-                                                                                            JavaScript基础- 数据类型🔨
-                                                                                        </a>
-                                                                                        
-                                                                                            
-                                                                                                <a class="next" rel="next" href="http://www.myalger.ml/android-ji-suan-qi-an-li/">
-                                                                                                     Android计算器案例🤖
-                                                                                                </a>
-                                                                                                
-                                                                                </section>
-                    </article>
-                </div>
-                
-                                            
-                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-<div id="vlaine-comment"></div>
-<script type="application/javascript">
-    new Valine({
-        el: '#vlaine-comment',
-        appId: 'zSod8O6f9ppLFYxB5PgGNotJ-gzGzoHsz',
-        appKey: 'zPFYmL2RAeARE6sTWFnHfJg7',
-        pageSize: 10,
-        avatar: 'mp',
-        placeholder: '来都来了，不妨评论一下',
-        visitor: true,
-        highlight: true,
-        recordIP: true,
-    })
-</script>
-                                                    
             </div>
-    </div>
-    </div>
-    </div>
-    
-        <footer id="footer" class="footer">
-            <div class="copyright">
-                
-                    <div class="Like">
-                        <div class="tip" data-tooltip="Do you like it?">
-                            <a href="https://github.com/ITJoker233/Gridea-theme-Chic" target="_blank" title=""><svg class="icon"
-                        aria-hidden="true">
-                        <use xlink:href="#like"></use>
-                    </svg><b class="like_text" id="star"></b></a>
-                        </div>
-                    </div>
-                    
-                        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-                            
-                                <b id="hitokoto"></b><br>
-                                
-                                        <svg viewBox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="8" height="8" class="my-face">
-            <path
-                d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z"
-                fill="#93b5cf"></path>
-        </svg>
-                                        Alger&#39;s blog &copy;Copyright
-                                            <script>
-                                                var date = new Date();
-                                                document.write("" + date.getFullYear());
-                                            </script>
-                                            | Powered by
-                                            <a href="https://coding.net" target="_blank">
-                                                Coding.net
-                                            </a>
-            </div>
-            <div id="update" style="display:none;">
-                on
-            </div>
-            
-                <div id="version" style="display:none;">
-                    1.7.6
-                </div>
-                
-                    <script>
-                        var port = '';
-                        
-                        document.write('<div id="home_path" style="display:none;">' + document.location.protocol + '//' + window.document.location.hostname + port + '</div>')
-                    </script>
-        </footer>
-        
-                <script>
-                    
-                    
-                    
-                    hitokoto();
-                    
-                    getStar();
-                    hljs.initHighlighting();
-                    console.clear();
-                    
-                    CheckVersion();
-                    
-                    var newDate = new Date();
-                    newDate.setTime(1598520023486);
-                    console.log(" Blog Update Time: " + newDate.toLocaleDateString());
-                    console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
-                </script>
+          </article>
         </div>
-</body>
-<script>
-    scroll();
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="http://www.myalger.ml/android-ji-suan-qi-an-li/">
+                <h3 class="post-title">
+                   Android计算器案例🤖
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="http://www.myalger.ml/images/avatar.png?v=1598520405188" class="no-responsive avatar">
+    <div class="text-muted">春风得意马蹄疾,一日看尽长安花.
+</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="http://www.myalger.ml/zheng-ze-biao-da-shi-xue-xi/">正则表达式学习🏓</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="http://www.myalger.ml/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/"> ASP.NET用PlaceHolder动态添加组件实现单选题目</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="http://www.myalger.ml/javascript-ji-chu-shu-ju-lei-xing/">JavaScript基础- 数据类型🔨</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="http://www.myalger.ml/javascript-vuejs-ji-chu-xue-xi/">JavaScript----Vue.js基础学习 🚀</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="http://www.myalger.ml/android-ji-suan-qi-an-li/"> Android计算器案例🤖</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="http://www.myalger.ml/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/">教你用代码写一个实时疫情图😷</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="http://www.myalger.ml/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">CSS动画制作旋转木马🦄</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="http://www.myalger.ml/htmlcss-mo-fang-shang-pin-zhan-shi/">HTML+CSS 模仿商品展示 💻</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="http://www.myalger.ml/about/">关于</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="http://www.myalger.ml/G4NR921eB/" class="badge ">
+          Share
+        </a>
+      
+        <a href="http://www.myalger.ml/NQvaoSPkJ/" class="badge secondary">
+          ASP.NET
+        </a>
+      
+        <a href="http://www.myalger.ml/He-D_m5QM/" class="badge secondary">
+          JavaScript
+        </a>
+      
+        <a href="http://www.myalger.ml/p9SDW22Ljl/" class="badge success">
+          Vue.js
+        </a>
+      
+        <a href="http://www.myalger.ml/uXar5IwUu/" class="badge secondary">
+          Android
+        </a>
+      
+        <a href="http://www.myalger.ml/FoJvIOEID/" class="badge warning">
+          HTML
+        </a>
+      
+        <a href="http://www.myalger.ml/Io18193yza/" class="badge secondary">
+          CSS
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://www.myalger.ml/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
 </script>
 
+
+
+
+  </body>
 </html>
