@@ -1,319 +1,231 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>文章归档 | Alger&#39;s blog</title>
-<meta name="description" content="春风得意马蹄疾,一日看尽长安花.
-">
+<title>Alger&#39;s blog</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="http://www.myalger.ml/favicon.ico?v=1598520405188">
+<link rel="shortcut icon" href="http://www.myalger.ml/favicon.ico?v=1598520540104">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="http://www.myalger.ml/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
 
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
-  </head>
-  <body>
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="http://www.myalger.ml">Alger&#39;s blog</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Alger&#39;s blog
+        </div>
     </div>
-  </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1598520540104" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
 </nav>
 
-    
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          
+        <div class="post-container">
+            <div class="post-detail gt-bg-theme-color-first">
+                <article class="gt-post-content">
+                    <h2 class="post-title">归档</h2>
+        
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
+<div class="archives-container">
+    
+        <h2 class="year gt-c-cotent-color-first">2020</h2>
+        
             
-              <h3 class="year" data-aos-delay="500">2020</h3>
-              
-                
-                  <article class="post">
+                <article class="post">
                     <a href="http://www.myalger.ml/zheng-ze-biao-da-shi-xue-xi/">
-                      <h4 class="post-title">
-                        正则表达式学习🏓
-                      </h4>
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2020-03-13&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            正则表达式学习🏓
+                        </div>
                     </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="http://www.myalger.ml/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/">
-                      <h4 class="post-title">
-                         ASP.NET用PlaceHolder动态添加组件实现单选题目
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="http://www.myalger.ml/javascript-ji-chu-shu-ju-lei-xing/">
-                      <h4 class="post-title">
-                        JavaScript基础- 数据类型🔨
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="http://www.myalger.ml/javascript-vuejs-ji-chu-xue-xi/">
-                      <h4 class="post-title">
-                        JavaScript----Vue.js基础学习 🚀
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="http://www.myalger.ml/android-ji-suan-qi-an-li/">
-                      <h4 class="post-title">
-                         Android计算器案例🤖
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="http://www.myalger.ml/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/">
-                      <h4 class="post-title">
-                        教你用代码写一个实时疫情图😷
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="http://www.myalger.ml/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">
-                      <h4 class="post-title">
-                        CSS动画制作旋转木马🦄
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="http://www.myalger.ml/htmlcss-mo-fang-shang-pin-zhan-shi/">
-                      <h4 class="post-title">
-                        HTML+CSS 模仿商品展示 💻
-                      </h4>
-                    </a>
-                  </article>
-                
-              
+                </article>
             
-          </div>
-        </div>
-        <div class="row flex-edges">
-  
-  
+        
+            
+                <article class="post">
+                    <a href="http://www.myalger.ml/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2020-03-13&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                             ASP.NET用PlaceHolder动态添加组件实现单选题目
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="http://www.myalger.ml/javascript-ji-chu-shu-ju-lei-xing/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2020-03-13&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            JavaScript基础- 数据类型🔨
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="http://www.myalger.ml/javascript-vuejs-ji-chu-xue-xi/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2020-03-13&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            JavaScript----Vue.js基础学习 🚀
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="http://www.myalger.ml/android-ji-suan-qi-an-li/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2020-03-13&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                             Android计算器案例🤖
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="http://www.myalger.ml/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2020-03-13&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            教你用代码写一个实时疫情图😷
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="http://www.myalger.ml/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2020-02-14&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            CSS动画制作旋转木马🦄
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="http://www.myalger.ml/htmlcss-mo-fang-shang-pin-zhan-shi/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2020-02-13&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            HTML+CSS 模仿商品展示 💻
+                        </div>
+                    </a>
+                </article>
+            
+        
+    
 </div>
 
-      </div>
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="http://www.myalger.ml/images/avatar.png?v=1598520405188" class="no-responsive avatar">
-    <div class="text-muted">春风得意马蹄疾,一日看尽长安花.
+        <div class="pagination-container">
+    
+    
+</div>
+
+    </article>
+</div>
+</div>
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">春风得意马蹄疾,一日看尽长安花.
 </div>
     <div class="social-container">
-      
         
-      
+            
         
-      
+            
         
-      
+            
         
-      
+            
         
-      
+            
+        
+            
+        
     </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
     </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="http://www.myalger.ml/zheng-ze-biao-da-shi-xue-xi/">正则表达式学习🏓</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="http://www.myalger.ml/aspnet-yong-placeholder-dong-tai-tian-jia-zu-jian-shi-xian-dan-xuan-ti-mu/"> ASP.NET用PlaceHolder动态添加组件实现单选题目</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="http://www.myalger.ml/javascript-ji-chu-shu-ju-lei-xing/">JavaScript基础- 数据类型🔨</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="http://www.myalger.ml/javascript-vuejs-ji-chu-xue-xi/">JavaScript----Vue.js基础学习 🚀</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="http://www.myalger.ml/android-ji-suan-qi-an-li/"> Android计算器案例🤖</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="http://www.myalger.ml/jiao-ni-yong-dai-ma-xie-yi-ge-shi-shi-yi-qing-tu/">教你用代码写一个实时疫情图😷</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="http://www.myalger.ml/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">CSS动画制作旋转木马🦄</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="http://www.myalger.ml/htmlcss-mo-fang-shang-pin-zhan-shi/">HTML+CSS 模仿商品展示 💻</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="http://www.myalger.ml/about/">关于</a>
-            </li>
-          
-        
-      </ul>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="http://www.myalger.ml/atom.xml" target="_blank">RSS</a></a>
     </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="http://www.myalger.ml/G4NR921eB/" class="badge success">
-          Share
-        </a>
-      
-        <a href="http://www.myalger.ml/NQvaoSPkJ/" class="badge warning">
-          ASP.NET
-        </a>
-      
-        <a href="http://www.myalger.ml/He-D_m5QM/" class="badge secondary">
-          JavaScript
-        </a>
-      
-        <a href="http://www.myalger.ml/p9SDW22Ljl/" class="badge warning">
-          Vue.js
-        </a>
-      
-        <a href="http://www.myalger.ml/uXar5IwUu/" class="badge ">
-          Android
-        </a>
-      
-        <a href="http://www.myalger.ml/FoJvIOEID/" class="badge success">
-          HTML
-        </a>
-      
-        <a href="http://www.myalger.ml/Io18193yza/" class="badge ">
-          CSS
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://www.myalger.ml/atom.xml" target="_blank">RSS</a>
-  </div>
 </div>
 
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
-
-hljs.initHighlightingOnLoad()
-
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
-
-
-
-  </body>
+    </div>
+</div>
+</body>
 </html>
