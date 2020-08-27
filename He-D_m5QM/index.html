@@ -1,297 +1,177 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="all,follow">
-<meta name="googlebot" content="index,follow,snippet,archive">
+  <head>
+    <meta charset="utf-8" >
+
 <title>JavaScript | Alger&#39;s blog</title>
-<link rel="shortcut icon" href="http://47.93.91.138:5500/favicon.ico?v=1598517078902">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="http://47.93.91.138:5500/styles/main.css" type='text/css' media='all'>
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+<link rel="shortcut icon" href="http://47.93.91.138:5500/favicon.ico?v=1598517178146">
+<link rel="stylesheet" href="http://47.93.91.138:5500/styles/main.css">
 
 
 
-</head>
-<body class="home blog ct-body standard">
-<div id="overflow-container" class="overflow-container">
-    <header id="site-header" class="site-header" role="banner">
-    <div class='top-navigation top-navigation-important'>
-        <div class='container'>
-            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
-                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
-                <div class="menu">
-                    <ul id="menu-secondary-items" class="menu-secondary-items">
-                        
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/G4NR921eB/">Share</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/NQvaoSPkJ/">ASP.NET</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/He-D_m5QM/">JavaScript</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/p9SDW22Ljl/">Vue.js</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/uXar5IwUu/">Android</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/FoJvIOEID/">HTML</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/Io18193yza/">CSS</a>
-                        </li>
-                            
-                        
-                    </ul>
-                </div>
-            </div>
-            <ul class="social-media-icons">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-            </ul>
-        </div>
-    </div>
-
-    <div class="container">
-        <div id="title-info" class="title-info">
-            <div id='site-title' class='site-title'>
-                <a href="http://47.93.91.138:5500">  Alger&#39;s blog </a>
-            </div>
-        </div>
-        <button id="toggle-navigation" class="toggle-navigation">
-            <i class="fa fa-bars"></i>
-        </button>
-        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
-        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
-            <p class="site-description">春风得意马蹄疾,一日看尽长安花.
-</p>
-            <div class="menu">
-                <ul id="menu-primary-items" class="menu-primary-items">
-                     
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/">首页</a>
-                            </li>
-                        
-                    
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/archives">归档</a>
-                            </li>
-                        
-                    
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/tags">标签</a>
-                            </li>
-                        
-                    
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/about">关于</a>
-                            </li>
-                        
-                    
-                </ul>
-            </div>
-        </div>
-    </div>
 
 
-</header>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-        <div class="main-content">
-            <div class="current-tag-container">
-                <h2 class="title">
-                    标签：#JavaScript
-                </h2>
-            </div>
-        </div>
-    <div id="main" class="main" role="main">
-  <h1 class="screen-reader-text">Posts</h1>
-  
-  <div id="loop-container" class="loop-container">
-    <div class="post type-post status-publish format-standard   has-post-thumbnail hentry category-design tag-memories
-    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
-      
-      even
-       excerpt">
-      
-      <a class="featured-image-link" href="http://47.93.91.138:5500/javascript-ji-chu-shu-ju-lei-xing/">
-        <div class='featured-image lazy lazy-bg-image' data-background="https://s2.ax1x.com/2020/02/29/3sIvnJ.jpg"></div>
+
+
+    <meta name="description" content="春风得意马蹄疾,一日看尽长安花.
+">
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://47.93.91.138:5500">
+        <img src="http://47.93.91.138:5500/images/avatar.png?v=1598517178146" class="site-logo">
+        <h1 class="site-title">Alger&#39;s blog</h1>
       </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-      <div class="excerpt-container">
-        <div class="excerpt-meta">
-          <span class="date">  · 2020-03-13 ·</span> <span> / </span>
-          <span class="author">
-              <a href="http://47.93.91.138:5500" title="Posts by  Alger&#39;s blog" rel="author"> Alger&#39;s blog</a>
-          </span>
-            
-                <span> / </span>
-                <span class="category">
-                        <a href="http://47.93.91.138:5500/He-D_m5QM/">JavaScript</a>
-                </span>
-            
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      春风得意马蹄疾,一日看尽长安花.
 
-        </div>
-        <div class='excerpt-header'>
-          <h2 class='excerpt-title'>
-            <a href="http://47.93.91.138:5500/javascript-ji-chu-shu-ju-lei-xing/"> JavaScript基础- 数据类型🔨 </a>
-          </h2>
-        </div>
-        <div class='excerpt-content'>
-          <article>
-              <p>ES5中有六种数据类型<br>
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://47.93.91.138:5500/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: JavaScript</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="http://47.93.91.138:5500/javascript-ji-chu-shu-ju-lei-xing/">
+                  <h2 class="post-title">JavaScript基础- 数据类型🔨</h2>
+                </a>
+                <div class="post-date">
+                  2020-03-13
+                </div>
+                <div class="post-abstract">
+                  <p>ES5中有六种数据类型<br>
 js中的数据类型为字面变量 以它的值来定义数据类型</p>
 
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
+                </div>
+              </div>
+              
+                <a class="right" href="http://47.93.91.138:5500/javascript-ji-chu-shu-ju-lei-xing/">
+                  <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/29/3sIvnJ.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="http://47.93.91.138:5500/javascript-vuejs-ji-chu-xue-xi/">
+                  <h2 class="post-title">JavaScript----Vue.js基础学习 🚀</h2>
+                </a>
+                <div class="post-date">
+                  2020-03-13
+                </div>
+                <div class="post-abstract">
+                  <p>Vue 是一套用于构建用户界面的渐进式框架Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。能够为复杂的单页应用提供驱动。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="http://47.93.91.138:5500/javascript-vuejs-ji-chu-xue-xi/">
+                  <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/29/3yS0oT.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-  <div id="loop-container" class="loop-container">
-    <div class="post type-post status-publish format-standard   has-post-thumbnail hentry category-design tag-memories
-    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
-      
-        odd
-       excerpt">
-      
-      <a class="featured-image-link" href="http://47.93.91.138:5500/javascript-vuejs-ji-chu-xue-xi/">
-        <div class='featured-image lazy lazy-bg-image' data-background="https://s2.ax1x.com/2020/02/29/3yS0oT.png"></div>
-      </a>
-      
-      <div class="excerpt-container">
-        <div class="excerpt-meta">
-          <span class="date">  · 2020-03-13 ·</span> <span> / </span>
-          <span class="author">
-              <a href="http://47.93.91.138:5500" title="Posts by  Alger&#39;s blog" rel="author"> Alger&#39;s blog</a>
-          </span>
-            
-                <span> / </span>
-                <span class="category">
-                        <a href="http://47.93.91.138:5500/He-D_m5QM/">JavaScript</a>
-                </span>
-            
-                <span> / </span>
-                <span class="category">
-                        <a href="http://47.93.91.138:5500/p9SDW22Ljl/">Vue.js</a>
-                </span>
-            
-
-        </div>
-        <div class='excerpt-header'>
-          <h2 class='excerpt-title'>
-            <a href="http://47.93.91.138:5500/javascript-vuejs-ji-chu-xue-xi/"> JavaScript----Vue.js基础学习 🚀 </a>
-          </h2>
-        </div>
-        <div class='excerpt-content'>
-          <article>
-              <p>Vue 是一套用于构建用户界面的渐进式框架Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。能够为复杂的单页应用提供驱动。</p>
-
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
   
 </div>
 
-    <nav class="navigation pagination" role="navigation">
-    <h2 class="screen-reader-text">Posts navigation</h2>
-    <div class="nav-links">
-        
-        
-    </div>
-</nav>
-
-    <footer id="site-footer" class="site-footer" role="contentinfo">
-    <h1>
-        <a href="http://47.93.91.138:5500"> Alger&#39;s blog </a>
-    </h1>
-    <p class="site-description">春风得意马蹄疾,一日看尽长安花.
-</p>
-    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
-        <div class="menu">
-            <ul id="menu-footer-items" class="menu-footer-items">
-            </ul>
         </div>
+      </div>
     </div>
-    <ul class="social-media-icons">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    </ul>
-    <div class="design-credit">
-        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
-    </div>
-</footer>
-<script>
-    hljs.initHighlightingOnLoad()
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
-<script src="http://47.93.91.138:5500/media/scripts/lib/jquery.min.js"></script>
-<script src="http://47.93.91.138:5500/media/scripts/lib/jquerymigrate.js"></script>
-<script src="http://47.93.91.138:5500/media/scripts/lib/production.min.js"></script>
 
-</div>
-</body>
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
 </html>

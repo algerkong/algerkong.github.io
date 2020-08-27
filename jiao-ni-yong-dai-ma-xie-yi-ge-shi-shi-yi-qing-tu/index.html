@@ -1,177 +1,114 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="all,follow">
-<meta name="googlebot" content="index,follow,snippet,archive">
+  <head>
+    <meta charset="utf-8" >
+
 <title>教你用代码写一个实时疫情图😷 | Alger&#39;s blog</title>
-<link rel="shortcut icon" href="http://47.93.91.138:5500/favicon.ico?v=1598517078902">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="http://47.93.91.138:5500/styles/main.css" type='text/css' media='all'>
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+<link rel="shortcut icon" href="http://47.93.91.138:5500/favicon.ico?v=1598517178146">
+<link rel="stylesheet" href="http://47.93.91.138:5500/styles/main.css">
 
 
 
-</head>
-<body class="home blog ct-body standard">
-<div id="overflow-container" class="overflow-container">
-  <a class="skip-content" href="#main">Skip to content</a>
-  <header id="site-header" class="site-header" role="banner">
-    <div class='top-navigation top-navigation-important'>
-        <div class='container'>
-            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
-                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
-                <div class="menu">
-                    <ul id="menu-secondary-items" class="menu-secondary-items">
-                        
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/G4NR921eB/">Share</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/NQvaoSPkJ/">ASP.NET</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/He-D_m5QM/">JavaScript</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/p9SDW22Ljl/">Vue.js</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/uXar5IwUu/">Android</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/FoJvIOEID/">HTML</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="http://47.93.91.138:5500/Io18193yza/">CSS</a>
-                        </li>
-                            
-                        
-                    </ul>
-                </div>
-            </div>
-            <ul class="social-media-icons">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-            </ul>
-        </div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="🤧这两天疫情越来越严重，各个大公司都做了实时疫情图，这里来教一下大家如何用代码来实现
+
+
+🔎🔎    效果网址
+看起来不错吧，那我们来实时的撸一个。
+不会代码的同学可以跳过这儿，直接到文章末尾，有教你怎么调用的。
+绘制中国地图
+首先，..." />
+    <meta name="keywords" content="Share" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://47.93.91.138:5500">
+        <img src="http://47.93.91.138:5500/images/avatar.png?v=1598517178146" class="site-logo">
+        <h1 class="site-title">Alger&#39;s blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-
-    <div class="container">
-        <div id="title-info" class="title-info">
-            <div id='site-title' class='site-title'>
-                <a href="http://47.93.91.138:5500">  Alger&#39;s blog </a>
-            </div>
-        </div>
-        <button id="toggle-navigation" class="toggle-navigation">
-            <i class="fa fa-bars"></i>
-        </button>
-        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
-        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
-            <p class="site-description">春风得意马蹄疾,一日看尽长安花.
-</p>
-            <div class="menu">
-                <ul id="menu-primary-items" class="menu-primary-items">
-                     
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/">首页</a>
-                            </li>
-                        
-                    
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/archives">归档</a>
-                            </li>
-                        
-                    
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/tags">标签</a>
-                            </li>
-                        
-                    
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/about">关于</a>
-                            </li>
-                        
-                    
-                </ul>
-            </div>
-        </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/about" class="site-nav">
+            关于
+          </a>
+        
+      
     </div>
-
-
-</header>
-
-
-  <div id="main" class="main" role="main">
-    <div id="loop-container" class="loop-container">
-      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
         
-          <div class='featured-image lazy lazy-bg-image' data-background="https://s2.ax1x.com/2020/02/04/1D0mGR.png">
-          </div>
+      
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      春风得意马蹄疾,一日看尽长安花.
 
-        <div class="entry-meta">
-          <span class="date">· 2020-03-13 ·</span> <span> / </span>
-          <span class="author">
-            <a href="http://47.93.91.138:5500" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></a>
-          </span>
-          
-            <span class="category">
-                    <span> / </span>
-                    <a href="http://47.93.91.138:5500/G4NR921eB/">Share</a>
-                </span>
-          
-        </div>
-        <div class='entry-header'>
-          <h1 class='entry-title'>教你用代码写一个实时疫情图😷</h1>
-        </div>
-        <div class="entry-container">
-          <div class="entry-content">
-            <article>
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://47.93.91.138:5500/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">教你用代码写一个实时疫情图😷</h2>
+            <div class="post-date">2020-03-13</div>
+            
+              <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/04/1D0mGR.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
               <p>🤧这两天疫情越来越严重，各个大公司都做了<strong>实时疫情图</strong>，这里来教一下大家如何用代码来实现</p>
 <!-- more -->
 <figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/02/04/1DtjL4.png" alt="效果" loading="lazy"></figure>
@@ -242,133 +179,58 @@ $list = json_decode($result[1]);
 <pre><code class="language-html">&lt;iframe src=&quot;https://www.lovestu.com/api/project/cnmapyinqing/obj.php&quot; height=&quot;500&quot; frameborder=&quot;no&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt; &lt;/iframe&gt;
 </code></pre>
 
-            </article>
-          </div>
-          <div class='entry-meta-bottom'>
-            <div class="entry-categories">
-              <p>
-                <span>Categories</span>
-                
-                  
-                    
-                  <a href="http://47.93.91.138:5500/G4NR921eB/" title="View all posts in Share">Share</a>
-                    
-                    
-                    
-                  <a href="http://47.93.91.138:5500/NQvaoSPkJ/" title="View all posts in ASP.NET">ASP.NET</a>
-                    
-                    
-                    
-                  <a href="http://47.93.91.138:5500/He-D_m5QM/" title="View all posts in JavaScript">JavaScript</a>
-                    
-                    
-                    
-                  <a href="http://47.93.91.138:5500/p9SDW22Ljl/" title="View all posts in Vue.js">Vue.js</a>
-                    
-                    
-                    
-                  <a href="http://47.93.91.138:5500/uXar5IwUu/" title="View all posts in Android">Android</a>
-                    
-                    
-                    
-                  <a href="http://47.93.91.138:5500/FoJvIOEID/" title="View all posts in HTML">HTML</a>
-                    
-                    
-                    
-                  <a href="http://47.93.91.138:5500/Io18193yza/" title="View all posts in CSS">CSS</a>
-                    
-                    
-              </p>
             </div>
-            <div class="entry-tags">
-              <p><span>Tags</span>
-              </p>
-            </div>
-          </div>
-          <div class="author-meta">
-            <div class="author">
-              <img alt='' src="http://47.93.91.138:5500/images/avatar.png?v=1598517078902" class='avatar avatar-72 photo' height='72' width='72'>
-              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='http://47.93.91.138:5500'>Alger</a> </span>
-            </div>
-            <div class="bio">
-              <p>吃饭，睡觉，打豆豆</p>
-              
+            
+              <div class="tag-container">
                 
-              
+                  <a href="http://47.93.91.138:5500/G4NR921eB/" class="tag">
+                    Share
+                  </a>
                 
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            </div>
-          </div>
-        </div>
-          
-            <nav class="navigation pagination" role="navigation">
-              <h2 class="screen-reader-text">Posts navigation</h2>
-              <div class="nav-links">
-                <a class="next page-numbers" href="http://47.93.91.138:5500/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">下一篇->CSS动画制作旋转木马🦄</a>
               </div>
-            </nav>
-          
-      </div>
-      <section id="comments" class="comments">
-        
-      </section>
-    </div>
-  </div>
-  <footer id="site-footer" class="site-footer" role="contentinfo">
-    <h1>
-        <a href="http://47.93.91.138:5500"> Alger&#39;s blog </a>
-    </h1>
-    <p class="site-description">春风得意马蹄疾,一日看尽长安花.
-</p>
-    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
-        <div class="menu">
-            <ul id="menu-footer-items" class="menu-footer-items">
-            </ul>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="http://47.93.91.138:5500/css-dong-hua-zhi-zuo-xuan-zhuan-mu-ma/">
+                  <h3 class="post-title">
+                    CSS动画制作旋转木马🦄
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
         </div>
+      </div>
     </div>
-    <ul class="social-media-icons">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    </ul>
-    <div class="design-credit">
-        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
-    </div>
-</footer>
-<script>
-    hljs.initHighlightingOnLoad()
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
-<script src="http://47.93.91.138:5500/media/scripts/lib/jquery.min.js"></script>
-<script src="http://47.93.91.138:5500/media/scripts/lib/jquerymigrate.js"></script>
-<script src="http://47.93.91.138:5500/media/scripts/lib/production.min.js"></script>
 
-</div>
-</body>
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
 </html>
-
