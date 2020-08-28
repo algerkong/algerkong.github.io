@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://www.myalger.ml</id>
     <title>Alger&apos;s blog</title>
-    <updated>2020-08-27T09:45:40.095Z</updated>
+    <updated>2020-08-28T01:44:47.279Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://www.myalger.ml"/>
     <link rel="self" href="http://www.myalger.ml/atom.xml"/>
@@ -11,6 +11,201 @@
     <logo>http://www.myalger.ml/images/avatar.png</logo>
     <icon>http://www.myalger.ml/favicon.ico</icon>
     <rights>All rights reserved 2020, Alger&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[从零开始使用Vue3.0和Vant制作音乐App (一)1️⃣]]></title>
+        <id>http://www.myalger.ml/s_xra075M/</id>
+        <link href="http://www.myalger.ml/s_xra075M/">
+        </link>
+        <updated>2020-08-28T01:41:36.000Z</updated>
+        <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/08/28/d5XS2V.jpg" alt="d5XS2V.jpg" loading="lazy"></figure>
+<p>模仿网易云制作音乐APP🎧</p>
+]]></summary>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/08/28/d5XS2V.jpg" alt="d5XS2V.jpg" loading="lazy"></figure>
+<p>模仿网易云制作音乐APP🎧</p>
+<!-- more -->
+<h2 id="开始之前">开始之前</h2>
+<ul>
+<li><a href="https://binaryify.github.io/NeteaseCloudMusicApi/#/">网易云API</a> 这个API可以通过<code>node.js</code>实现抓取网易云API</li>
+<li><a href="https://youzan.github.io/vant/#/zh-CN/home">vant</a> 一个简单好用的vue组件库</li>
+</ul>
+<h2 id="项目创建">项目创建</h2>
+<pre><code class="language-bash">vue create vue-music-project
+</code></pre>
+<ul>
+<li>
+<p>安装<a href="https://router.vuejs.org/zh/">Vue-router</a></p>
+<pre><code class="language-bash"> npm install vue-router -s
+</code></pre>
+<ul>
+<li>
+<p>在<code>src</code>下创建<code>router</code>文件夹创建<code>index.js</code>     这里主要处理路由的跳转</p>
+</li>
+<li>
+<p>新建时写入如下</p>
+</li>
+<li>
+<pre><code class="language-js">import Vue from 'vue'
+import VueRouter from 'vue-router'
+//安装router
+Vue.use(VueRouter)
+
+//组件
+const Home = () =&gt; import ('../views/home/home')
+
+//路由跳转
+const routes = [
+  {
+    path: '',
+    redirect: '/home',
+  },
+  {
+    path: '/home',
+    component: Home,
+    meta: {
+      keepAlive: true
+    }
+  }
+]
+
+//路由
+const router = new VueRouter({
+  routes,
+  mode: 'history'
+})
+
+//解决有时候路由跳转报错
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err =&gt; err)
+}
+
+//导出路由对象
+export default router
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>安装<a href="https://vuex.vuejs.org/zh/guide/">Vuex</a></p>
+<pre><code class="language-bash">npm i vuex -s
+</code></pre>
+<ul>
+<li>
+<p>在<code>src</code>下创建<code>store</code>文件夹下创建<code>index.js</code>   这里处理vuex全局效果</p>
+</li>
+<li>
+<p>创建时写入代码如下</p>
+</li>
+<li>
+<pre><code class="language-js">import Vue from 'vue'
+import Vuex from 'vuex'
+
+//安装vuex
+Vue.use(Vuex)
+
+//要使用的对象
+const state = {
+  name: '',
+}
+
+const store = new Vuex.Store({
+  state
+})
+
+export default store
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>安装<a href="http://www.axios-js.com/">axios</a></p>
+<pre><code class="language-bash">npm install axios --save
+</code></pre>
+<ul>
+<li>
+<p>在<code>src</code>下新建<code>network</code>文件夹下新建<code>request.js</code> 这里主要处理网络请求</p>
+</li>
+<li>
+<p>创建时写入如下代码</p>
+</li>
+<li>
+<pre><code class="language-js">import axios from 'axios'
+import baseUrl from &quot;这里放要请求的总路径&quot;;
+
+export function request(config,success, failure){
+  const instance = axios.create({
+    // baseURL:'https://autumnfish.cn',
+    baseURL:baseUrl,
+    timeout:5000
+  })
+  
+  // 2. axios的拦截器
+  //2.1 请求拦截
+  //1. 比如说 config中的一些信息不符合服务器的要求
+  //2. 每次发送网络请求时, 都希望在界面中添加一个请求的图标
+  //3. 某些网络请求(比如 登录token) 必须携带一些特殊的信息
+  instance.interceptors.request.use(config =&gt; {
+    return config
+  }, err =&gt; {
+
+  });
+
+  // 2.2响应拦截
+  instance.interceptors.response.use(res=&gt;{
+    //响应拦截必须返回res.data
+    return res.data
+  },err=&gt;{
+    console.log(err);
+  });
+  
+  //返回promise
+  return instance(config)
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>main.js</code>的配置</p>
+<ul>
+<li>
+<pre><code class="language-js">  import Vue from 'vue'
+  import App from './App.vue'
+  //路由
+  import router from &quot;./router&quot;
+  //vuex
+  import store from &quot;./store&quot;;
+  
+  //使用vant
+  import Vant from 'vant';
+  import 'vant/lib/index.css';
+  Vue.use(Vant);
+  
+  
+  //将vuex的store添加到Vue的原型中 , 即所有组件中
+  Vue.prototype.$store = store;
+  
+  
+  import axios from 'axios'
+  axios.defaults.withCredentials = true
+  Vue.prototype.$axios = axios
+  
+  
+  new Vue({
+    render: h =&gt; h(App),
+    router
+  }).$mount('#app')
+  
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>下一期开始编写🚗</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[正则表达式学习🏓]]></title>
         <id>http://www.myalger.ml/zheng-ze-biao-da-shi-xue-xi/</id>

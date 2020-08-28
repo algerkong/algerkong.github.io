@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>HTML+CSS 模仿商品展示 💻 | Alger&#39;s blog</title>
+<title>从零开始使用Vue3.0和Vant制作音乐App (一)1️⃣ | Alger&#39;s blog</title>
 
 <link rel="shortcut icon" href="http://www.myalger.ml/favicon.ico?v=1598579081823">
 
@@ -89,12 +89,20 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    HTML+CSS 模仿商品展示 💻
+                    从零开始使用Vue3.0和Vant制作音乐App (一)1️⃣
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2020-02-13 ·
+                        · 2020-08-28 ·
                     </time>
+                    
+                        <a href="http://www.myalger.ml/He-D_m5QM/" class="post-tags">
+                            # JavaScript
+                        </a>
+                    
+                        <a href="http://www.myalger.ml/p9SDW22Ljl/" class="post-tags">
+                            # Vue.js
+                        </a>
                     
                         <a href="http://www.myalger.ml/FoJvIOEID/" class="post-tags">
                             # HTML
@@ -106,159 +114,206 @@
                     
                 </div>
                 <div class="post-content">
-                    <p>💁今天我们来实现一个简单的<strong><strong>商品展示</strong></strong>小页面</p>
-<p>用到的知识主要是<code>:hover</code>和<code>position</code></p>
+                    <figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/08/28/d5XS2V.jpg" alt="d5XS2V.jpg" loading="lazy"></figure>
+<p>模仿网易云制作音乐APP🎧</p>
 <!-- more -->
-<h2 id="html代码️">HTML代码<strong>⬇️</strong></h2>
-<pre><code class="language-html">    &lt;!-- 第一个商品 --&gt;
-
-&lt;main&gt;
-        &lt;article&gt;
-            &lt;div&gt;&lt;img src=&quot;图片链接&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
-        &lt;/article&gt;
-        &lt;div&gt;
-            &lt;h2&gt;小米CC9PRO [一亿像素]&lt;/h2&gt;
-            &lt;p&gt;
-                &lt;span style=&quot;color: red;&quot;&gt;「分期享6期免息，购机享1TB小米云空间1年使用权」&lt;/span&gt;
-                &lt;br&gt; 1亿像素主摄 / 全场景五摄像头 / 四闪光灯 / 3200万自拍 / 10倍混合光学变焦，50倍数字变焦 / 5260mAh ⼤电量 / 标配 30W疾速快充 / ⼩米⾸款超薄屏下指纹 / 德国莱茵低蓝光认证 / 多功能NFC / 红外万能遥控 / 1216超线性扬声器
-            &lt;/p&gt;
-        &lt;/div&gt;
-&lt;/main&gt;
-
-    &lt;!-- 第二个商品 --&gt;
-&lt;div class=&quot;sp-page&quot;&gt;
-        &lt;div class=&quot;img-box&quot;&gt;
-            &lt;img src=&quot;图片链接&quot; alt=&quot;&quot;&gt;
-            &lt;div class=&quot;text&quot;&gt;
-                &lt;h1&gt;关于图片的介绍&lt;/h1&gt;
-                &lt;p&gt;关于图片的介绍关于图片的介于图片于图片的的绍&lt;/p&gt;
-                &lt;p&gt;关于图片的介绍于图片的关于图片的介绍&lt;/p&gt;
-                &lt;p&gt;关于图片的介绍关于图片的介绍&lt;/p&gt;
-                &lt;button&gt;Learn more&lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-&lt;/div&gt;
+<h2 id="开始之前">开始之前</h2>
+<ul>
+<li><a href="https://binaryify.github.io/NeteaseCloudMusicApi/#/">网易云API</a> 这个API可以通过<code>node.js</code>实现抓取网易云API</li>
+<li><a href="https://youzan.github.io/vant/#/zh-CN/home">vant</a> 一个简单好用的vue组件库</li>
+</ul>
+<h2 id="项目创建">项目创建</h2>
+<pre><code class="language-bash">vue create vue-music-project
 </code></pre>
-<h2 id="css代码️">CSS代码<strong>⬇️</strong></h2>
-<pre><code class="language-css">
-/*第一个商品*/
-     main {
-            width: 500px;
-            height: 400px;
-            background-color: #696969;
-            margin: 0 auto;
-            border: 5px solid #000;
-            overflow: hidden;
-        }
-
-        main&gt;article {
-            height: 268px;
-            overflow: hidden;
-            transition: .8s;
-        }
-
-        main:hover article {
-            height: 0;
-        }
-
-        article&gt;div img {
-            height: 270px;
-        }
-
-        main&gt;div p {
-            color: rgba(255, 255, 255, 0);
-            transition: 1s;
-        }
-
-        main&gt;div {
-            color: #ffffff;
-            padding: 20px;
-            border-top: 5px solid #ffffff;
-            box-sizing: border-box;
-            transition: 1s;
-        }
-
-        main:hover div {
-            border: none;
-        }
-
-        main:hover div&gt;p {
-            color: rgba(255, 255, 255, 1);
-        }
-
-        div&gt;h2 {
-            font-size: 30pt;
-            line-height: 2.8em;
-            text-align: center;
-        }
-
-
-
-
-
-
-
-
-/*第二个商品*/
-
-    .sp-page{
-        margin: 50px auto;
-        width: 400px ;
-        height: 215px;
-        border: 20px solid #4b4b4b;
-        overflow: hidden;
-
-    }
-    .sp-page&gt;.img-box{
-        width: 390px;
-        height: 205px;
-        overflow: hidden;
-        position: relative;
-        border: 5px solid #ffffff;
-    }
-    .sp-page&gt;.img-box&gt;img{
-        width: 390px;
-        height: 205px;
-        transition: all 0.3s linear 0s;
-    }
-    .img-box:hover img{
-        transform: scale(1.2);
-    }
-    .text{
-        position: absolute;
-        top: -100%;
-        left: -100%;
-        width: 390px;
-        height: 205px;
-        background-color: #ffffffd0;
-        overflow: hidden;
-        transition: 1s;
-        transition-delay: .5s;
-        text-align: center;
-    }
-    .img-box:hover .text{
-        top: 0;
-        left: 0;
-    }
-    button{
-        margin: 10px;
-        padding: 5px 10px;
-        background-color: #2a8d8d;
-        color: white;
-        border: #000 solid 1px;
-        cursor: pointer;
-    }
+<ul>
+<li>
+<p>安装<a href="https://router.vuejs.org/zh/">Vue-router</a></p>
+<pre><code class="language-bash"> npm install vue-router -s
 </code></pre>
-<p><a href="http://alger.cf/practice/%E4%BE%8B%E5%AD%90/CSS%E5%AE%9E%E7%8E%B0%E5%A4%A9%E7%8C%AB%E5%95%86%E5%93%81%E6%A0%B7%E5%BC%8F.html">👓展示页面</a></p>
+<ul>
+<li>
+<p>在<code>src</code>下创建<code>router</code>文件夹创建<code>index.js</code>     这里主要处理路由的跳转</p>
+</li>
+<li>
+<p>新建时写入如下</p>
+</li>
+<li>
+<pre><code class="language-js">import Vue from 'vue'
+import VueRouter from 'vue-router'
+//安装router
+Vue.use(VueRouter)
+
+//组件
+const Home = () =&gt; import ('../views/home/home')
+
+//路由跳转
+const routes = [
+  {
+    path: '',
+    redirect: '/home',
+  },
+  {
+    path: '/home',
+    component: Home,
+    meta: {
+      keepAlive: true
+    }
+  }
+]
+
+//路由
+const router = new VueRouter({
+  routes,
+  mode: 'history'
+})
+
+//解决有时候路由跳转报错
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err =&gt; err)
+}
+
+//导出路由对象
+export default router
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>安装<a href="https://vuex.vuejs.org/zh/guide/">Vuex</a></p>
+<pre><code class="language-bash">npm i vuex -s
+</code></pre>
+<ul>
+<li>
+<p>在<code>src</code>下创建<code>store</code>文件夹下创建<code>index.js</code>   这里处理vuex全局效果</p>
+</li>
+<li>
+<p>创建时写入代码如下</p>
+</li>
+<li>
+<pre><code class="language-js">import Vue from 'vue'
+import Vuex from 'vuex'
+
+//安装vuex
+Vue.use(Vuex)
+
+//要使用的对象
+const state = {
+  name: '',
+}
+
+const store = new Vuex.Store({
+  state
+})
+
+export default store
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>安装<a href="http://www.axios-js.com/">axios</a></p>
+<pre><code class="language-bash">npm install axios --save
+</code></pre>
+<ul>
+<li>
+<p>在<code>src</code>下新建<code>network</code>文件夹下新建<code>request.js</code> 这里主要处理网络请求</p>
+</li>
+<li>
+<p>创建时写入如下代码</p>
+</li>
+<li>
+<pre><code class="language-js">import axios from 'axios'
+import baseUrl from &quot;这里放要请求的总路径&quot;;
+
+export function request(config,success, failure){
+  const instance = axios.create({
+    // baseURL:'https://autumnfish.cn',
+    baseURL:baseUrl,
+    timeout:5000
+  })
+  
+  // 2. axios的拦截器
+  //2.1 请求拦截
+  //1. 比如说 config中的一些信息不符合服务器的要求
+  //2. 每次发送网络请求时, 都希望在界面中添加一个请求的图标
+  //3. 某些网络请求(比如 登录token) 必须携带一些特殊的信息
+  instance.interceptors.request.use(config =&gt; {
+    return config
+  }, err =&gt; {
+
+  });
+
+  // 2.2响应拦截
+  instance.interceptors.response.use(res=&gt;{
+    //响应拦截必须返回res.data
+    return res.data
+  },err=&gt;{
+    console.log(err);
+  });
+  
+  //返回promise
+  return instance(config)
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>main.js</code>的配置</p>
+<ul>
+<li>
+<pre><code class="language-js">  import Vue from 'vue'
+  import App from './App.vue'
+  //路由
+  import router from &quot;./router&quot;
+  //vuex
+  import store from &quot;./store&quot;;
+  
+  //使用vant
+  import Vant from 'vant';
+  import 'vant/lib/index.css';
+  Vue.use(Vant);
+  
+  
+  //将vuex的store添加到Vue的原型中 , 即所有组件中
+  Vue.prototype.$store = store;
+  
+  
+  import axios from 'axios'
+  axios.defaults.withCredentials = true
+  Vue.prototype.$axios = axios
+  
+  
+  new Vue({
+    render: h =&gt; h(App),
+    router
+  }).$mount('#app')
+  
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>下一期开始编写🚗</p>
+</blockquote>
 
                 </div>
             </article>
         </div>
 
         
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="http://www.myalger.ml/zheng-ze-biao-da-shi-xue-xi/" class="post-title gt-a-link">
+                    正则表达式学习🏓
+                </a>
+            </div>
+        
 
         
-            <span id="/htmlcss-mo-fang-shang-pin-zhan-shi/" class="leancloud_visitors" data-flag-title="HTML+CSS 模仿商品展示 💻">
+            <span id="/s_xra075M/" class="leancloud_visitors" data-flag-title="从零开始使用Vue3.0和Vant制作音乐App (一)1️⃣">
                 <em class="post-meta-item-text">阅读量 </em>
                 <i class="leancloud-visitors-count">0</i>
             </span>
