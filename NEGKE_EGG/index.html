@@ -1,0 +1,262 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content="Alger的博客,这里有好多新奇的知识,以及一个小开发者的闲话">
+<meta name="keywords" content="Alger,Alger的博客,alger,alger的博客,html,css,vue,刘俊杰的博客,刘俊杰,liujunjie,Alger开发,Android,刘先生">
+
+<title>教你用代码写一个实时疫情图😷 | Alger&#39;s blog</title>
+
+<link rel="shortcut icon" href="http://www.myalger.ml/favicon.ico?v=1598691208072">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="http://www.myalger.ml/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Alger&#39;s blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="http://www.myalger.ml/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1598691208072" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    教你用代码写一个实时疫情图😷
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-03-13 ·
+                    </time>
+                    
+                        <a href="http://www.myalger.ml/G4NR921eB/" class="post-tags">
+                            # Share
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>🤧这两天疫情越来越严重，各个大公司都做了<strong>实时疫情图</strong>，这里来教一下大家如何用代码来实现</p>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/02/04/1DtjL4.png" alt="效果" loading="lazy"></figure>
+<p>🔎🔎    <strong><a href="http://alger.cf/practice/">效果网址</a></strong></p>
+<p><strong>看起来不错吧，那我们来实时的撸一个。</strong></p>
+<p>不会代码的同学可以跳过这儿，直接到文章末尾，有教你怎么调用的。</p>
+<h2 id="绘制中国地图">绘制中国地图</h2>
+<p>首先，数据的爬取，经过对比，目前能实时显示数据的网站有两家，一个是网易另一个是丁香医生。</p>
+<p>那么我们就使用前端+PHP来制作一个这个地图。</p>
+<p>要使用JS绘制中国地图，需要选择一个库，目前可以用的前端地图绘制库还是很多的，highmaps的调用是最简单的</p>
+<figure data-type="image" tabindex="2"><a href="https://imgchr.com/i/1DUV3V"><img src="https://s2.ax1x.com/2020/02/04/1DUV3V.md.png" alt="1DUV3V.md.png" loading="lazy"></a></figure>
+<p>实例的代码量非常少，并且体积控制得最小</p>
+<pre><code class="language-js">&lt;div id=&quot;map&quot; style=&quot;width:800px;height: 500px;&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;https://img.hcharts.cn/highmaps/highmaps.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://data.jianshukeji.com/geochina/china.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+// 随机数据
+var data = [{&quot;name&quot;:&quot;北京&quot;,&quot;value&quot;:72},{&quot;name&quot;:&quot;天津&quot;,&quot;value&quot;:44},{&quot;name&quot;:&quot;河北&quot;,&quot;value&quot;:90},{&quot;name&quot;:&quot;山西&quot;,&quot;value&quot;:91},{&quot;name&quot;:&quot;内蒙古&quot;,&quot;value&quot;:68},{&quot;name&quot;:&quot;辽宁&quot;,&quot;value&quot;:73},{&quot;name&quot;:&quot;吉林&quot;,&quot;value&quot;:76},{&quot;name&quot;:&quot;黑龙江&quot;,&quot;value&quot;:29},{&quot;name&quot;:&quot;上海&quot;,&quot;value&quot;:18},{&quot;name&quot;:&quot;江苏&quot;,&quot;value&quot;:80},{&quot;name&quot;:&quot;浙江&quot;,&quot;value&quot;:87},{&quot;name&quot;:&quot;安徽&quot;,&quot;value&quot;:58},{&quot;name&quot;:&quot;福建&quot;,&quot;value&quot;:43},{&quot;name&quot;:&quot;江西&quot;,&quot;value&quot;:9},{&quot;name&quot;:&quot;山东&quot;,&quot;value&quot;:89},{&quot;name&quot;:&quot;河南&quot;,&quot;value&quot;:94},{&quot;name&quot;:&quot;湖北&quot;,&quot;value&quot;:16},{&quot;name&quot;:&quot;湖南&quot;,&quot;value&quot;:83},{&quot;name&quot;:&quot;广东&quot;,&quot;value&quot;:76},{&quot;name&quot;:&quot;广西&quot;,&quot;value&quot;:71},{&quot;name&quot;:&quot;海南&quot;,&quot;value&quot;:82},{&quot;name&quot;:&quot;重庆&quot;,&quot;value&quot;:81},{&quot;name&quot;:&quot;四川&quot;,&quot;value&quot;:8},{&quot;name&quot;:&quot;贵州&quot;,&quot;value&quot;:15},{&quot;name&quot;:&quot;云南&quot;,&quot;value&quot;:49},{&quot;name&quot;:&quot;西藏&quot;,&quot;value&quot;:91},{&quot;name&quot;:&quot;陕西&quot;,&quot;value&quot;:64},{&quot;name&quot;:&quot;甘肃&quot;,&quot;value&quot;:58},{&quot;name&quot;:&quot;青海&quot;,&quot;value&quot;:1},{&quot;name&quot;:&quot;宁夏&quot;,&quot;value&quot;:51},{&quot;name&quot;:&quot;新疆&quot;,&quot;value&quot;:90},{&quot;name&quot;:&quot;台湾&quot;,&quot;value&quot;:79},{&quot;name&quot;:&quot;香港&quot;,&quot;value&quot;:31},{&quot;name&quot;:&quot;澳门&quot;,&quot;value&quot;:48},{&quot;name&quot;:&quot;南海诸岛&quot;,&quot;value&quot;:71},{&quot;name&quot;:&quot;南海诸岛&quot;,&quot;value&quot;:7}];
+// 初始化图表
+var map = new Highcharts.Map('map', {
+  title: {
+    text: '中国地图'
+  },
+  colorAxis: {
+    min: 0,
+    minColor: 'rgb(255,255,255)',
+    maxColor: '#006cee'
+  },
+  series: [{
+    data: data,
+    name: '随机数据',
+    mapData: Highcharts.maps['cn/china'],
+    joinBy: 'name' // 根据 name 属性进行关联
+  }]
+});
+&lt;/script&gt;
+</code></pre>
+<h2 id="数据抓取">数据抓取</h2>
+<p>通过分析数据，发现网页的数据不是异步加载的，是直接写在网页里面的</p>
+<p>包含了各省市各地区的数据</p>
+<figure data-type="image" tabindex="3"><img src="https://mmbiz.qpic.cn/mmbiz_png/HautRxjCevseppUyO4kViaGFF4rCujrcouJ7tic45HkscurWNxTAyaxyqE1C3AakqhrusfqBlMsjWs5XoxRHoa0g/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" loading="lazy"></figure>
+<p>首先把数据截取下来，看看数据的结构，解析后，发现json数据结构如下</p>
+<figure data-type="image" tabindex="4"><img src="https://mmbiz.qpic.cn/mmbiz_png/HautRxjCevseppUyO4kViaGFF4rCujrcoicib3scUzVCHqwM6T5ibv0gEkbKQFDIpe92OGzDXKBKJrUFZKlqxGBibsA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" loading="lazy"></figure>
+<p>我们的地图数据肯定是不能直接拿来用的，所以得自己获取数据，解析成上面代码中[{name:'省份',value:人数}]这样的数据。</p>
+<p>首先使用PHP爬取数据，并且使用正则表达式截取这一段json</p>
+<pre><code class="language-json">$url = &quot;https://3g.dxy.cn/newh5/view/pneumonia&quot;; 
+$data = file_get_contents($url);    
+$pattern = '/window.getAreaStat = (.*?)\}catch/is';    
+preg_match($pattern, $data, $result);   
+$list = json_decode($result[1]);
+</code></pre>
+<p>截取到的数据解析为数组存入变量list</p>
+<p>通过遍历，获取到省份和确诊人数</p>
+<pre><code class="language-php"> foreach ($list as $item) {    
+     $tmp['name'] = $item-&gt;provinceShortName; 
+     $tmp['value'] = $item-&gt;confirmedCount;     
+     $datalist[] = $tmp;    
+ }
+</code></pre>
+<p>这时候，数据已经变成了我们需要的数据了。</p>
+<p>那么，接下来就是修改最开始的前端代码，这儿既然使用PHP，那就直接一步到位，不用异步调用。</p>
+<p>并且，为了解决不每次访问都去爬取一次丁香医生的网站，所以访问的功能得单独提取出来，设置为半小时或者一小时实时访问一次，并且把数据存入文件，每次访问前端，就直接读取文件就行了，能加快访问的速度。</p>
+<p>使用<strong>宝塔定时任务</strong>，或者手动访问单一PHP文件即可，这儿不多赘述。</p>
+<p>最后，设置地图的主题色为红色，并且修改标题内容，简单地图制作完成</p>
+<figure data-type="image" tabindex="5"><img src="https://mmbiz.qpic.cn/mmbiz_png/HautRxjCevseppUyO4kViaGFF4rCujrco0yGc3MPPrRtglrquqFtCUxUwLpbjTDUa5JTLn0aSXZdEuyKKEicib2gg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" loading="lazy"></figure>
+<h2 id="调用">调用📢</h2>
+<p>大家只需要引用这个网页即可。</p>
+<pre><code class="language-html">&lt;iframe src=&quot;https://www.lovestu.com/api/project/cnmapyinqing/obj.php&quot; height=&quot;500&quot; frameborder=&quot;no&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt; &lt;/iframe&gt;
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="http://www.myalger.ml/CSS_EF/" class="post-title gt-a-link">
+                    CSS动画制作旋转木马🦄
+                </a>
+            </div>
+        
+
+        
+            <span id="/NEGKE_EGG/" class="leancloud_visitors" data-flag-title="教你用代码写一个实时疫情图😷">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'zSod8O6f9ppLFYxB5PgGNotJ-gzGzoHsz',
+		appKey: 'zPFYmL2RAeARE6sTWFnHfJg7',
+		avatar: 'retro',
+		pageSize: 10,
+		recordIp: true,
+		placeholder: 'Just Go Go',
+		visitor: true,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">春风得意马蹄疾,一日看尽长安花.
+</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="http://www.myalger.ml/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

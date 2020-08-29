@@ -1,4 +1,4 @@
-<html lang="zh">
+<html>
 <head>
     <meta charset="utf-8" />
 <meta name="description" content="" />
@@ -7,7 +7,7 @@
 <meta name="description" content="Alger的博客,这里有好多新奇的知识,以及一个小开发者的闲话">
 <meta name="keywords" content="Alger,Alger的博客,alger,alger的博客,html,css,vue,刘俊杰的博客,刘俊杰,liujunjie,Alger开发,Android,刘先生">
 
-<title>关于 - Alger&#39;s blog</title>
+<title>HTML+CSS 模仿商品展示 💻 | Alger&#39;s blog</title>
 
 <link rel="shortcut icon" href="http://www.myalger.ml/favicon.ico?v=1598691208072">
 
@@ -27,7 +27,7 @@
 <!--<script src="media/scripts/index.js"></script>-->
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
@@ -88,26 +88,184 @@
 </nav>
 
     <div class="post-container">
-        <div class="post-detail">
+        <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
+                <h2 class="post-title">
+                    HTML+CSS 模仿商品展示 💻
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-02-13 ·
+                    </time>
+                    
+                        <a href="http://www.myalger.ml/FoJvIOEID/" class="post-tags">
+                            # HTML
+                        </a>
+                    
+                        <a href="http://www.myalger.ml/Io18193yza/" class="post-tags">
+                            # CSS
+                        </a>
+                    
+                </div>
                 <div class="post-content">
-                    <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>Alger的博客，</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>一个又逗又笨的程序员的牢骚</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>吃饭，睡觉，打豆豆</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>1、QQ：1455048564<br>
-2、邮箱：liuliujjjjasd@gmail.com</p>
+                    <p>💁今天我们来实现一个简单的<strong><strong>商品展示</strong></strong>小页面</p>
+<p>用到的知识主要是<code>:hover</code>和<code>position</code></p>
+<!-- more -->
+<h2 id="html代码️">HTML代码<strong>⬇️</strong></h2>
+<pre><code class="language-html">    &lt;!-- 第一个商品 --&gt;
+
+&lt;main&gt;
+        &lt;article&gt;
+            &lt;div&gt;&lt;img src=&quot;图片链接&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+        &lt;/article&gt;
+        &lt;div&gt;
+            &lt;h2&gt;小米CC9PRO [一亿像素]&lt;/h2&gt;
+            &lt;p&gt;
+                &lt;span style=&quot;color: red;&quot;&gt;「分期享6期免息，购机享1TB小米云空间1年使用权」&lt;/span&gt;
+                &lt;br&gt; 1亿像素主摄 / 全场景五摄像头 / 四闪光灯 / 3200万自拍 / 10倍混合光学变焦，50倍数字变焦 / 5260mAh ⼤电量 / 标配 30W疾速快充 / ⼩米⾸款超薄屏下指纹 / 德国莱茵低蓝光认证 / 多功能NFC / 红外万能遥控 / 1216超线性扬声器
+            &lt;/p&gt;
+        &lt;/div&gt;
+&lt;/main&gt;
+
+    &lt;!-- 第二个商品 --&gt;
+&lt;div class=&quot;sp-page&quot;&gt;
+        &lt;div class=&quot;img-box&quot;&gt;
+            &lt;img src=&quot;图片链接&quot; alt=&quot;&quot;&gt;
+            &lt;div class=&quot;text&quot;&gt;
+                &lt;h1&gt;关于图片的介绍&lt;/h1&gt;
+                &lt;p&gt;关于图片的介绍关于图片的介于图片于图片的的绍&lt;/p&gt;
+                &lt;p&gt;关于图片的介绍于图片的关于图片的介绍&lt;/p&gt;
+                &lt;p&gt;关于图片的介绍关于图片的介绍&lt;/p&gt;
+                &lt;button&gt;Learn more&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="css代码️">CSS代码<strong>⬇️</strong></h2>
+<pre><code class="language-css">
+/*第一个商品*/
+     main {
+            width: 500px;
+            height: 400px;
+            background-color: #696969;
+            margin: 0 auto;
+            border: 5px solid #000;
+            overflow: hidden;
+        }
+
+        main&gt;article {
+            height: 268px;
+            overflow: hidden;
+            transition: .8s;
+        }
+
+        main:hover article {
+            height: 0;
+        }
+
+        article&gt;div img {
+            height: 270px;
+        }
+
+        main&gt;div p {
+            color: rgba(255, 255, 255, 0);
+            transition: 1s;
+        }
+
+        main&gt;div {
+            color: #ffffff;
+            padding: 20px;
+            border-top: 5px solid #ffffff;
+            box-sizing: border-box;
+            transition: 1s;
+        }
+
+        main:hover div {
+            border: none;
+        }
+
+        main:hover div&gt;p {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        div&gt;h2 {
+            font-size: 30pt;
+            line-height: 2.8em;
+            text-align: center;
+        }
+
+
+
+
+
+
+
+
+/*第二个商品*/
+
+    .sp-page{
+        margin: 50px auto;
+        width: 400px ;
+        height: 215px;
+        border: 20px solid #4b4b4b;
+        overflow: hidden;
+
+    }
+    .sp-page&gt;.img-box{
+        width: 390px;
+        height: 205px;
+        overflow: hidden;
+        position: relative;
+        border: 5px solid #ffffff;
+    }
+    .sp-page&gt;.img-box&gt;img{
+        width: 390px;
+        height: 205px;
+        transition: all 0.3s linear 0s;
+    }
+    .img-box:hover img{
+        transform: scale(1.2);
+    }
+    .text{
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 390px;
+        height: 205px;
+        background-color: #ffffffd0;
+        overflow: hidden;
+        transition: 1s;
+        transition-delay: .5s;
+        text-align: center;
+    }
+    .img-box:hover .text{
+        top: 0;
+        left: 0;
+    }
+    button{
+        margin: 10px;
+        padding: 5px 10px;
+        background-color: #2a8d8d;
+        color: white;
+        border: #000 solid 1px;
+        cursor: pointer;
+    }
+</code></pre>
+<p><a href="http://alger.cf/practice/%E4%BE%8B%E5%AD%90/CSS%E5%AE%9E%E7%8E%B0%E5%A4%A9%E7%8C%AB%E5%95%86%E5%93%81%E6%A0%B7%E5%BC%8F.html">👓展示页面</a></p>
 
                 </div>
             </article>
         </div>
-        <br>
+
+        
+
+        
+            <span id="/HTMW_GE/" class="leancloud_visitors" data-flag-title="HTML+CSS 模仿商品展示 💻">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
         
 
         
@@ -138,7 +296,6 @@
 </script>
 
         
-
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">春风得意马蹄疾,一日看尽长安花.

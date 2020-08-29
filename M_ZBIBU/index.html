@@ -1,0 +1,400 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content="Alger的博客,这里有好多新奇的知识,以及一个小开发者的闲话">
+<meta name="keywords" content="Alger,Alger的博客,alger,alger的博客,html,css,vue,刘俊杰的博客,刘俊杰,liujunjie,Alger开发,Android,刘先生">
+
+<title>正则表达式学习🏓 | Alger&#39;s blog</title>
+
+<link rel="shortcut icon" href="http://www.myalger.ml/favicon.ico?v=1598691208072">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="http://www.myalger.ml/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Alger&#39;s blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="http://www.myalger.ml/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1598691208072" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    正则表达式学习🏓
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-03-13 ·
+                    </time>
+                    
+                        <a href="http://www.myalger.ml/G4NR921eB/" class="post-tags">
+                            # Share
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。</p>
+<p>正则表达式是繁琐的，但它是强大的，学会之后的应用会让你除了提高效率外，会给你带来绝对的成就感。</p>
+<!-- more -->
+<p>下面是一长串我不一定看的东西</p>
+<h2 id="表达式字符">表达式字符</h2>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>将下一个字符标记为一个特殊字符、或一个原义字符、或一个 向后引用、或一个八进制转义符。例如，'n' 匹配字符 &quot;n&quot;。'\n' 匹配一个换行符。序列 '\' 匹配 &quot;&quot; 而 &quot;(&quot; 则匹配 &quot;(&quot;。</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配输入字符串的开始位置。如果设置了 RegExp 对象的 Multiline 属性，^ 也匹配 '\n' 或 '\r' 之后的位置。</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配输入字符串的结束位置。如果设置了RegExp 对象的 Multiline 属性，$ 也匹配 '\n' 或 '\r' 之前的位置。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次。例如，zo* 能匹配 &quot;z&quot; 以及 &quot;zoo&quot;。* 等价于{0,}。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次。例如，'zo+' 能匹配 &quot;zo&quot; 以及 &quot;zoo&quot;，但不能匹配 &quot;z&quot;。+ 等价于 {1,}。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次。例如，&quot;do(es)?&quot; 可以匹配 &quot;do&quot; 或 &quot;does&quot; 。? 等价于 {0,1}。</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n 是一个非负整数。匹配确定的 n 次。例如，'o{2}' 不能匹配 &quot;Bob&quot; 中的 'o'，但是能匹配 &quot;food&quot; 中的两个 o。</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n 是一个非负整数。至少匹配n 次。例如，'o{2,}' 不能匹配 &quot;Bob&quot; 中的 'o'，但能匹配 &quot;foooood&quot; 中的所有 o。'o{1,}' 等价于 'o+'。'o{0,}' 则等价于 'o*'。</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，&quot;o{1,3}&quot; 将匹配 &quot;fooooood&quot; 中的前三个 o。'o{0,1}' 等价于 'o?'。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>当该字符紧跟在任何一个其他限制符 (*, +, ?, {n}, {n,}, {n,m}) 后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串 &quot;oooo&quot;，'o+?' 将匹配单个 &quot;o&quot;，而 'o+' 将匹配所有 'o'。</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符（\n、\r）之外的任何单个字符。要匹配包括 '\n' 在内的任何字符，请使用像&quot;<strong>(.|\n)</strong>&quot;的模式。</td>
+</tr>
+<tr>
+<td>(pattern)</td>
+<td>匹配 pattern 并获取这一匹配。所获取的匹配可以从产生的 Matches 集合得到，在VBScript 中使用 SubMatches 集合，在JScript 中则使用 $0…$9 属性。要匹配圆括号字符，请使用 '(' 或 ')'。</td>
+</tr>
+<tr>
+<td>(?:pattern)</td>
+<td>匹配 pattern 但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用 &quot;或&quot; 字符 (|) 来组合一个模式的各个部分是很有用。例如， 'industr(?:y|ies) 就是一个比 'industry|industries' 更简略的表达式。</td>
+</tr>
+<tr>
+<td>(?=pattern)</td>
+<td>正向肯定预查（look ahead positive assert），在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，&quot;Windows(?=95|98|NT|2000)&quot;能匹配&quot;Windows2000&quot;中的&quot;Windows&quot;，但不能匹配&quot;Windows3.1&quot;中的&quot;Windows&quot;。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td>(?!pattern)</td>
+<td>正向否定预查(negative assert)，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如&quot;Windows(?!95|98|NT|2000)&quot;能匹配&quot;Windows3.1&quot;中的&quot;Windows&quot;，但不能匹配&quot;Windows2000&quot;中的&quot;Windows&quot;。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td>(?&lt;=pattern)</td>
+<td>反向(look behind)肯定预查，与正向肯定预查类似，只是方向相反。例如，&quot;<code>(?&lt;=95|98|NT|2000)Windows</code>&quot;能匹配&quot;<code>2000Windows</code>&quot;中的&quot;<code>Windows</code>&quot;，但不能匹配&quot;<code>3.1Windows</code>&quot;中的&quot;<code>Windows</code>&quot;。</td>
+</tr>
+<tr>
+<td>(?&lt;!pattern)</td>
+<td>反向否定预查，与正向否定预查类似，只是方向相反。例如&quot;<code>(?&quot;能匹配&quot;</code>3.1Windows<code>&quot;中的&quot;</code>Windows<code>&quot;，但不能匹配&quot;</code>2000Windows<code>&quot;中的&quot;</code>Windows`&quot;。</td>
+</tr>
+<tr>
+<td>x|y</td>
+<td>匹配 x 或 y。例如，'z|food' 能匹配 &quot;z&quot; 或 &quot;food&quot;。'(z|f)ood' 则匹配 &quot;zood&quot; 或 &quot;food&quot;。</td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td>字符集合。匹配所包含的任意一个字符。例如， '[abc]' 可以匹配 &quot;plain&quot; 中的 'a'。</td>
+</tr>
+<tr>
+<td>[^xyz]</td>
+<td>负值字符集合。匹配未包含的任意字符。例如， '[^abc]' 可以匹配 &quot;plain&quot; 中的'p'、'l'、'i'、'n'。</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>字符范围。匹配指定范围内的任意字符。例如，'[a-z]' 可以匹配 'a' 到 'z' 范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td>[^a-z]</td>
+<td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，'[^a-z]' 可以匹配任何不在 'a' 到 'z' 范围内的任意字符。</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配一个单词边界，也就是指单词和空格间的位置。例如， 'er\b' 可以匹配&quot;never&quot; 中的 'er'，但不能匹配 &quot;verb&quot; 中的 'er'。</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配非单词边界。'er\B' 能匹配 &quot;verb&quot; 中的 'er'，但不能匹配 &quot;never&quot; 中的 'er'。</td>
+</tr>
+<tr>
+<td>\cx</td>
+<td>匹配由 x 指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 'c' 字符。</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一个数字字符。等价于 [0-9]。</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配一个非数字字符。等价于 [^0-9]。</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>匹配一个换页符。等价于 \x0c 和 \cL。</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符。等价于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>匹配一个回车符。等价于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>匹配一个垂直制表符。等价于 \x0b 和 \cK。</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母、数字、下划线。等价于'[A-Za-z0-9_]'。</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配非字母、数字、下划线。等价于 '[^A-Za-z0-9_]'。</td>
+</tr>
+<tr>
+<td>\xn</td>
+<td>匹配 n，其中 n 为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，'\x41' 匹配 &quot;A&quot;。'\x041' 则等价于 '\x04' &amp; &quot;1&quot;。正则表达式中可以使用 ASCII 编码。</td>
+</tr>
+<tr>
+<td>\num</td>
+<td>匹配 num，其中 num 是一个正整数。对所获取的匹配的引用。例如，'(.)\1' 匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>标识一个八进制转义值或一个向后引用。如果 \n 之前至少 n 个获取的子表达式，则 n 为向后引用。否则，如果 n 为八进制数字 (0-7)，则 n 为一个八进制转义值。</td>
+</tr>
+<tr>
+<td>\nm</td>
+<td>标识一个八进制转义值或一个向后引用。如果 \nm 之前至少有 nm 个获得子表达式，则 nm 为向后引用。如果 \nm 之前至少有 n 个获取，则 n 为一个后跟文字 m 的向后引用。如果前面的条件都不满足，若 n 和 m 均为八进制数字 (0-7)，则 \nm 将匹配八进制转义值 nm。</td>
+</tr>
+<tr>
+<td>\nml</td>
+<td>如果 n 为八进制数字 (0-3)，且 m 和 l 均为八进制数字 (0-7)，则匹配八进制转义值 nml。</td>
+</tr>
+<tr>
+<td>\un</td>
+<td>匹配 n，其中 n 是一个用四个十六进制数字表示的 Unicode 字符。例如， \u00A9 匹配版权符号 (?)。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="正则例子">正则例子</h2>
+<ol>
+<li>
+<p>电话号码</p>
+<p>((\d{3})|\d{3}-)?\d{8}       电话号📞</p>
+<p>（）表示一组字符</p>
+<p>((\d{3}))表示3个数字</p>
+<p>|  表示或者</p>
+<p>\d{3}-表示三个数字加一个杠  即123-</p>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/03/04/3om8sS.md.png" alt="3om8sS.md.png" loading="lazy"></figure>
+</li>
+<li>
+<p>手机号</p>
+<p>^1[3456789]\d{9}</p>
+<p>^1表示以1开头</p>
+<p>[3456789]表示其中一个数字</p>
+<p>\d{9}表示9个数字</p>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2020/03/04/3ondTH.png" alt="3ondTH.png" loading="lazy"></figure>
+</li>
+</ol>
+<blockquote>
+<p>好了就这样，简单不（我觉得不简单）✨</p>
+<p>下期见🎃</p>
+</blockquote>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="http://www.myalger.ml/X_AlNJN/" class="post-title gt-a-link">
+                     ASP.NET用PlaceHolder动态添加组件实现单选题目
+                </a>
+            </div>
+        
+
+        
+            <span id="/M_ZBIBU/" class="leancloud_visitors" data-flag-title="正则表达式学习🏓">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'zSod8O6f9ppLFYxB5PgGNotJ-gzGzoHsz',
+		appKey: 'zPFYmL2RAeARE6sTWFnHfJg7',
+		avatar: 'retro',
+		pageSize: 10,
+		recordIp: true,
+		placeholder: 'Just Go Go',
+		visitor: true,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">春风得意马蹄疾,一日看尽长安花.
+</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="http://www.myalger.ml/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

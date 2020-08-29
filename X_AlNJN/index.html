@@ -7,7 +7,7 @@
 <meta name="description" content="Alger的博客,这里有好多新奇的知识,以及一个小开发者的闲话">
 <meta name="keywords" content="Alger,Alger的博客,alger,alger的博客,html,css,vue,刘俊杰的博客,刘俊杰,liujunjie,Alger开发,Android,刘先生">
 
-<title>从零开始使用Vue3.0和Vant制作音乐App (一)1️⃣ | Alger&#39;s blog</title>
+<title> ASP.NET用PlaceHolder动态添加组件实现单选题目 | Alger&#39;s blog</title>
 
 <link rel="shortcut icon" href="http://www.myalger.ml/favicon.ico?v=1598691208072">
 
@@ -91,215 +91,112 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    从零开始使用Vue3.0和Vant制作音乐App (一)1️⃣
+                     ASP.NET用PlaceHolder动态添加组件实现单选题目
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2020-08-28 ·
+                        · 2020-03-13 ·
                     </time>
                     
-                        <a href="http://www.myalger.ml/He-D_m5QM/" class="post-tags">
-                            # JavaScript
-                        </a>
-                    
-                        <a href="http://www.myalger.ml/p9SDW22Ljl/" class="post-tags">
-                            # Vue.js
-                        </a>
-                    
-                        <a href="http://www.myalger.ml/FoJvIOEID/" class="post-tags">
-                            # HTML
-                        </a>
-                    
-                        <a href="http://www.myalger.ml/Io18193yza/" class="post-tags">
-                            # CSS
+                        <a href="http://www.myalger.ml/NQvaoSPkJ/" class="post-tags">
+                            # ASP.NET
                         </a>
                     
                 </div>
                 <div class="post-content">
-                    <figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/08/28/d5XS2V.jpg" alt="d5XS2V.jpg" loading="lazy"></figure>
-<p>模仿网易云制作音乐APP🎧</p>
+                    <p>利用<code>PlaceHolder</code>控件实现一个包含单项选择题的测试页面，其中题目信息包含于数组中。</p>
 <!-- more -->
-<h2 id="开始之前">开始之前</h2>
-<ul>
-<li><a href="https://binaryify.github.io/NeteaseCloudMusicApi/#/">网易云API</a> 这个API可以通过<code>node.js</code>实现抓取网易云API</li>
-<li><a href="https://youzan.github.io/vant/#/zh-CN/home">vant</a> 一个简单好用的vue组件库</li>
-</ul>
-<h2 id="项目创建">项目创建</h2>
-<pre><code class="language-bash">vue create vue-music-project
+<p>ASP页面🎈</p>
+<pre><code class="language-asp"> &lt;form id=&quot;form1&quot; runat=&quot;server&quot;&gt;
+     &lt;div&gt;
+         &lt;asp:PlaceHolder ID=&quot;PlaceHolder1&quot; runat=&quot;server&quot;&gt;&lt;/asp:PlaceHolder&gt;
+         &lt;br /&gt;
+         &lt;asp:Button ID=&quot;Button1&quot; runat=&quot;server&quot; Text=&quot;Button&quot; OnClick=&quot;Button1_Click&quot; /&gt;
+     &lt;/div&gt;
+&lt;/form&gt;
 </code></pre>
-<ul>
-<li>
-<p>安装<a href="https://router.vuejs.org/zh/">Vue-router</a></p>
-<pre><code class="language-bash"> npm install vue-router -s
-</code></pre>
-<ul>
-<li>
-<p>在<code>src</code>下创建<code>router</code>文件夹创建<code>index.js</code>     这里主要处理路由的跳转</p>
-</li>
-<li>
-<p>新建时写入如下</p>
-</li>
-<li>
-<pre><code class="language-js">import Vue from 'vue'
-import VueRouter from 'vue-router'
-//安装router
-Vue.use(VueRouter)
+<p>类文件🎈（多选）</p>
+<pre><code class="language-C#">protected void Page_Load(object sender, EventArgs e)
+{
+    //题目
+    string[,] tit = new string[2, 4] 
+    { 
+        {   &quot;(1）数a分解质因数是a=2×2×3，数b分解质因数是b=2×2×5，数a和数b的最大公因数是（）&quot;,
+         &quot;(2)已知3个数的和是470，第一个数比第二个数多160，第三个数比第一个数少180，这三个数的最大公因数是（)&quot;,
+         &quot;（3）下列选项中的数是序数的是（)&quot;,
+         &quot;（4）某地区的电话号码是一个八位数，已知其前四位数是一个固定数6869，那么该地区最多可安装（）部电话。&quot;
+        },
+        //答案
+        {&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;C&quot;}
+    };
+    //选项
+    string[,] answer = new string[4, 4]
+    { 
+        { &quot;A 2&quot;, &quot;B 4&quot;, &quot;C 6 &quot;, &quot;D 60&quot; }, 
+        { &quot;A 20&quot;, &quot;B 12&quot;, &quot;C 10&quot;, &quot;D 2&quot; }, 
+        { &quot;A 6只鸡&quot;, &quot;B 5支铅笔&quot;, &quot;C 2栋楼房&quot;, &quot;D 第2节课&quot; }, 
+        { &quot;A 6869 &quot;, &quot;B 9999 &quot;, &quot;C 10000&quot;, &quot;D 10001&quot; }
+    };
 
-//组件
-const Home = () =&gt; import ('../views/home/home')
+    for(int j = 0; j&lt;4; j++)
+    {
+        Label title = new Label();     //动态添加题目
+        title.ID = &quot;title&quot;+j.ToString();
+        title.Text = tit[0,j];
+        PlaceHolder1.Controls.Add(title);
 
-//路由跳转
-const routes = [
-  {
-    path: '',
-    redirect: '/home',
-  },
-  {
-    path: '/home',
-    component: Home,
-    meta: {
-      keepAlive: true
+        CheckBoxList check = new CheckBoxList();//题目添加选项
+        check.ID = &quot;check&quot; + j.ToString();
+        for (int i = 0; i &lt; 4; i++)
+        {
+            check.Items.Add(answer[j, i]);
+        }
+        PlaceHolder1.Controls.Add(check);
     }
-  }
-]
-
-//路由
-const router = new VueRouter({
-  routes,
-  mode: 'history'
-})
-
-//解决有时候路由跳转报错
-const originalPush = VueRouter.prototype.push
-VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err =&gt; err)
-}
-
-//导出路由对象
-export default router
-</code></pre>
-</li>
-</ul>
-</li>
-<li>
-<p>安装<a href="https://vuex.vuejs.org/zh/guide/">Vuex</a></p>
-<pre><code class="language-bash">npm i vuex -s
-</code></pre>
-<ul>
-<li>
-<p>在<code>src</code>下创建<code>store</code>文件夹下创建<code>index.js</code>   这里处理vuex全局效果</p>
-</li>
-<li>
-<p>创建时写入代码如下</p>
-</li>
-<li>
-<pre><code class="language-js">import Vue from 'vue'
-import Vuex from 'vuex'
-
-//安装vuex
-Vue.use(Vuex)
-
-//要使用的对象
-const state = {
-  name: '',
-}
-
-const store = new Vuex.Store({
-  state
-})
-
-export default store
-</code></pre>
-</li>
-</ul>
-</li>
-<li>
-<p>安装<a href="http://www.axios-js.com/">axios</a></p>
-<pre><code class="language-bash">npm install axios --save
-</code></pre>
-<ul>
-<li>
-<p>在<code>src</code>下新建<code>network</code>文件夹下新建<code>request.js</code> 这里主要处理网络请求</p>
-</li>
-<li>
-<p>创建时写入如下代码</p>
-</li>
-<li>
-<pre><code class="language-js">import axios from 'axios'
-import baseUrl from &quot;这里放要请求的总路径&quot;;
-
-export function request(config,success, failure){
-  const instance = axios.create({
-    // baseURL:'https://autumnfish.cn',
-    baseURL:baseUrl,
-    timeout:5000
-  })
-  
-  // 2. axios的拦截器
-  //2.1 请求拦截
-  //1. 比如说 config中的一些信息不符合服务器的要求
-  //2. 每次发送网络请求时, 都希望在界面中添加一个请求的图标
-  //3. 某些网络请求(比如 登录token) 必须携带一些特殊的信息
-  instance.interceptors.request.use(config =&gt; {
-    return config
-  }, err =&gt; {
-
-  });
-
-  // 2.2响应拦截
-  instance.interceptors.response.use(res=&gt;{
-    //响应拦截必须返回res.data
-    return res.data
-  },err=&gt;{
-    console.log(err);
-  });
-  
-  //返回promise
-  return instance(config)
 }
 </code></pre>
-</li>
-</ul>
-</li>
-<li>
-<p><code>main.js</code>的配置</p>
-<ul>
-<li>
-<pre><code class="language-js">  import Vue from 'vue'
-  import App from './App.vue'
-  //路由
-  import router from &quot;./router&quot;
-  //vuex
-  import store from &quot;./store&quot;;
-  
-  //使用vant
-  import Vant from 'vant';
-  import 'vant/lib/index.css';
-  Vue.use(Vant);
-  
-  
-  //将vuex的store添加到Vue的原型中 , 即所有组件中
-  Vue.prototype.$store = store;
-  
-  
-  import axios from 'axios'
-  axios.defaults.withCredentials = true
-  Vue.prototype.$axios = axios
-  
-  
-  new Vue({
-    render: h =&gt; h(App),
-    router
-  }).$mount('#app')
-  
+<p>这个是多选的代码，单选页面美化麻烦一点</p>
+<p>类文件🎈（单选）</p>
+<pre><code class="language-C#">protected void Page_Load(object sender, EventArgs e)
+{
+    //题目
+    string[,] tit = new string[2, 4] 
+    { 
+        {   &quot;(1）数a分解质因数是a=2×2×3，数b分解质因数是b=2×2×5，数a和数b的最大公因数是（）&quot;,
+         &quot;(2)已知3个数的和是470，第一个数比第二个数多160，第三个数比第一个数少180，这三个数的最大公因数是（)&quot;,
+         &quot;（3）下列选项中的数是序数的是（)&quot;,
+         &quot;（4）某地区的电话号码是一个八位数，已知其前四位数是一个固定数6869，那么该地区最多可安装（）部电话。&quot;
+        },
+        {&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;C&quot;}//答案
+    };
+    //选项
+    string[,] answer = new string[4, 4]
+    { 
+        { &quot;A 2&quot;, &quot;B 4&quot;, &quot;C 6 &quot;, &quot;D 60&quot; }, 
+        { &quot;A 20&quot;, &quot;B 12&quot;, &quot;C 10&quot;, &quot;D 2&quot; }, 
+        { &quot;A 6只鸡&quot;, &quot;B 5支铅笔&quot;, &quot;C 2栋楼房&quot;, &quot;D 第2节课&quot; }, 
+        { &quot;A 6869 &quot;, &quot;B 9999 &quot;, &quot;C 10000&quot;, &quot;D 10001&quot; }
+    };
+
+    for(int j = 0; j&lt;4; j++)
+    {
+        Label title = new Label();     //动态添加题目
+        title.ID = &quot;title&quot;+j.ToString();
+        title.Text = tit[0,j];
+        PlaceHolder1.Controls.Add(title);
+
+        RadioButton[] radio = new RadioButton[4];
+        for (int k = 0; k &lt; 4; k++)
+        {
+            radio[k] = new RadioButton();
+            radio[k].ID = &quot;radio&quot; + j.ToString() + &quot;_&quot; + k.ToString();
+            radio[k].GroupName = &quot;radio&quot; + j.ToString();
+            radio[k].Text = answer[j, k];
+            PlaceHolder1.Controls.Add(radio[k]);
+        }
+    }
+}
 </code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>下一期开始编写🚗</p>
-</blockquote>
 
                 </div>
             </article>
@@ -308,14 +205,14 @@ export function request(config,success, failure){
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="http://www.myalger.ml/M_ZBIBU/" class="post-title gt-a-link">
-                    正则表达式学习🏓
+                <a href="http://www.myalger.ml/MFE_EFMK/" class="post-title gt-a-link">
+                    JavaScript基础- 数据类型🔨
                 </a>
             </div>
         
 
         
-            <span id="/s_xra075M/" class="leancloud_visitors" data-flag-title="从零开始使用Vue3.0和Vant制作音乐App (一)1️⃣">
+            <span id="/X_AlNJN/" class="leancloud_visitors" data-flag-title=" ASP.NET用PlaceHolder动态添加组件实现单选题目">
                 <em class="post-meta-item-text">阅读量 </em>
                 <i class="leancloud-visitors-count">0</i>
             </span>

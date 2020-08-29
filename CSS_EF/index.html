@@ -7,7 +7,7 @@
 <meta name="description" content="Alger的博客,这里有好多新奇的知识,以及一个小开发者的闲话">
 <meta name="keywords" content="Alger,Alger的博客,alger,alger的博客,html,css,vue,刘俊杰的博客,刘俊杰,liujunjie,Alger开发,Android,刘先生">
 
-<title>Vue.js | Alger&#39;s blog</title>
+<title>CSS动画制作旋转木马🦄 | Alger&#39;s blog</title>
 
 <link rel="shortcut icon" href="http://www.myalger.ml/favicon.ico?v=1598691208072">
 
@@ -27,11 +27,11 @@
 <!--<script src="media/scripts/index.js"></script>-->
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -87,99 +87,163 @@
     </div>
 </nav>
 
-        <div class="current-tag-container">
-            <h2 class="title gt-c-content-color-first">
-                #Vue.js
-            </h2>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    CSS动画制作旋转木马🦄
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-02-14 ·
+                    </time>
+                    
+                        <a href="http://www.myalger.ml/FoJvIOEID/" class="post-tags">
+                            # HTML
+                        </a>
+                    
+                        <a href="http://www.myalger.ml/Io18193yza/" class="post-tags">
+                            # CSS
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>主要用到了<code>animation</code>动画  <code>transform</code>  旋转<code>perspective</code>产生透视效果 控制好图片的距离，理解三维模型，可以很简单的做出旋转木马。</p>
+<!-- more -->
+<p>代码如下💡</p>
+<pre><code class="language-html">&lt;style&gt;
+
+    body{
+        /* 规定元素的距离，产生3d透视效果 */
+        perspective: 1000px;
+        background-color: #dddddd;
+    }
+
+    section{
+        width: 300px;
+        height: 200px;
+        margin: 300px auto;
+        position: relative;
+        /* 让子元素保留其相对位置 */
+        transform-style: preserve-3d;
+        /* 动画效果 旋转 10s 匀速 循环 */
+        animation: rotate 5s linear infinite;
+    }
+
+    /* 旋转 */
+    @keyframes rotate{
+        0%{
+            transform: rotateY(0deg) rotate(0);
+        }
+        100%{
+            transform: rotateY(360deg) rotate(0);
+        }
+    }
+
+    section div{
+        font-size: 40px;
+        text-align: center;
+        color: white;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        background: url(&quot;https://i0.hdslb.com/bfs/sycp/creative_img/202002/89a3a2fca520c8f6df187878e47af032.jpg@1100w_484h_1c_100q.jpg&quot;) no-repeat;
+    }
+
+
+    section div:nth-child(1){
+        transform: translateZ(300px);
+    }
+
+    section div:nth-child(2){
+        transform: rotateY(60deg) translateZ(300px);
+    }
+    section div:nth-child(3){
+        transform: rotateY(120deg) translateZ(300px);
+    }
+    section div:nth-child(4){
+        transform: rotateY(180deg) translateZ(300px);
+    }
+    section div:nth-child(5){
+        transform: rotateY(240deg) translateZ(300px);
+    }
+
+    section div:nth-child(6){
+        transform: rotateY(300deg) translateZ(300px);
+    }
+
+&lt;/style&gt;
+
+
+&lt;body&gt;
+    &lt;section&gt;
+        &lt;div&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;5&lt;/div&gt;
+        &lt;div&gt;6&lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+
+</code></pre>
+<blockquote>
+<p>是不是很简单呢！</p>
+<p>下一篇见🧲</p>
+</blockquote>
+
+                </div>
+            </article>
         </div>
-        <div class="post-list-container">
-    <div class="post-inner">
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                            <span class="sticky-top-flag gt-bg-accent-color-first">置顶</span>
-                        
-                        <a href="http://www.myalger.ml/s_xra075M/">
-                            <span class="post-title gt-c-content-color-first">从零开始使用Vue3.0和Vant制作音乐App (一)1️⃣</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/08/28/d5XS2V.jpg" alt="d5XS2V.jpg" loading="lazy"></figure>
-<p>模仿网易云制作音乐APP🎧</p>
 
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2020-08-28 ·
-                        </time>
-                        
-                            <a href="http://www.myalger.ml/He-D_m5QM/" class="post-tag">
-                                # JavaScript
-                            </a>
-                        
-                            <a href="http://www.myalger.ml/p9SDW22Ljl/" class="post-tag">
-                                # Vue.js
-                            </a>
-                        
-                            <a href="http://www.myalger.ml/FoJvIOEID/" class="post-tag">
-                                # HTML
-                            </a>
-                        
-                            <a href="http://www.myalger.ml/Io18193yza/" class="post-tag">
-                                # CSS
-                            </a>
-                        
-                    </div>
-                </div>
-                
-                    <a href="http://www.myalger.ml/s_xra075M/" class="post-feature-image"
-                       style="background-image: url('https://s1.ax1x.com/2020/08/28/d5XS2V.jpg')">
-                    </a>
-                
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="http://www.myalger.ml/HTMW_GE/" class="post-title gt-a-link">
+                    HTML+CSS 模仿商品展示 💻
+                </a>
             </div>
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="http://www.myalger.ml/JAB_FEMKG/">
-                            <span class="post-title gt-c-content-color-first">JavaScript----Vue.js基础学习 🚀</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <p>Vue 是一套用于构建用户界面的渐进式框架Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。能够为复杂的单页应用提供驱动。</p>
 
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2020-03-13 ·
-                        </time>
-                        
-                            <a href="http://www.myalger.ml/He-D_m5QM/" class="post-tag">
-                                # JavaScript
-                            </a>
-                        
-                            <a href="http://www.myalger.ml/p9SDW22Ljl/" class="post-tag">
-                                # Vue.js
-                            </a>
-                        
-                    </div>
-                </div>
-                
-                    <a href="http://www.myalger.ml/JAB_FEMKG/" class="post-feature-image"
-                       style="background-image: url('https://s2.ax1x.com/2020/02/29/3yS0oT.png')">
-                    </a>
-                
-            </div>
         
-    </div>
-</div>
-        <div class="pagination-container">
-    
-    
-</div>
+            <span id="/CSS_EF/" class="leancloud_visitors" data-flag-title="CSS动画制作旋转木马🦄">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'zSod8O6f9ppLFYxB5PgGNotJ-gzGzoHsz',
+		appKey: 'zPFYmL2RAeARE6sTWFnHfJg7',
+		avatar: 'retro',
+		pageSize: 10,
+		recordIp: true,
+		placeholder: 'Just Go Go',
+		visitor: true,
+	});
+</script>
+
+        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">春风得意马蹄疾,一日看尽长安花.
