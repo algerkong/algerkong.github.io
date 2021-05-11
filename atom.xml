@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.myalger.top</id>
     <title>Alger&apos;s blog</title>
-    <updated>2021-05-11T15:33:39.042Z</updated>
+    <updated>2021-05-11T16:04:20.573Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.myalger.top"/>
     <link rel="self" href="http://blog.myalger.top/atom.xml"/>
@@ -11,6 +11,15 @@
     <logo>http://blog.myalger.top/images/avatar.png</logo>
     <icon>http://blog.myalger.top/favicon.ico</icon>
     <rights>All rights reserved 2021, Alger&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[这是视频测试]]></title>
+        <id>http://blog.myalger.top/o26LGW80y/</id>
+        <link href="http://blog.myalger.top/o26LGW80y/">
+        </link>
+        <updated>2021-05-11T16:03:59.000Z</updated>
+        <content type="html"><![CDATA[<p><video data-v-25f9ed12="" controls="controls" autoplay="autoplay" src="http://vodkgeyttp8.vod.126.net/cloudmusic/MmA1IDBiMCQwICIxMDBgIA==/mv/5810734/2de7a395d21b10219255542573cc36a2.mp4?wsSecret=e916258615bd1baf49fd1eb94d697e48&amp;wsTime=1620749009" poster="http://p1.music.126.net/Iy5UuaiGR0rNm3h_ax2t9w==/109951163133289147.jpg" class="mv-video"></video></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[从零开始使用Vue3.0和Vant制作音乐App (一)1️⃣]]></title>
         <id>http://blog.myalger.top/s_xra075M/</id>
