@@ -1,117 +1,116 @@
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta name="description" content="HTML+CSS 模仿商品展示 💻--Alger的博客">
-    <meta name="keywords"
-        content="Alger,Alger的博客,Alger's blog,alger,alger的博客,html,css,vue,刘俊杰的博客,刘俊杰,liujunjie,Alger开发,Android,刘先生">
-
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="utf-8" >
 
 <title>HTML+CSS 模仿商品展示 💻 | Alger&#39;s blog</title>
 
-<link rel="shortcut icon" href="http://blog.myalger.top/favicon.ico?v=1620746344538">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+<link rel="shortcut icon" href="http://blog.myalger.top/favicon.ico?v=1620747169288">
 <link rel="stylesheet" href="http://blog.myalger.top/styles/main.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
-
-<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
-<!-- DEMO JS -->
-<!--<script src="media/scripts/index.js"></script>-->
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
-</head>
 
-<body>
-    <div class="main gt-bg-theme-color-first">
-        <nav class="navbar navbar-expand-lg">
-    <div class="navbar-brand">
-        <img class="user-avatar" src="/images/avatar.png" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            Alger&#39;s blog
-        </div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="💁今天我们来实现一个简单的商品展示小页面
+用到的知识主要是:hover和position
+
+HTML代码⬇️
+    &lt;!-- 第一个商品 --&gt;
+
+&lt;main&gt;
+        &lt;article&gt;
+ ..." />
+    <meta name="keywords" content="HTML,CSS" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://blog.myalger.top">
+        <img src="http://blog.myalger.top/images/avatar.png?v=1620747169288" class="site-logo">
+        <h1 class="site-title">Alger&#39;s blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
-            
-                <div class="nav-item">
-                    
-                        <a href="/" class="menu gt-a-link">
-                            首页
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/archives" class="menu gt-a-link">
-                            归档
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/tags" class="menu gt-a-link">
-                            标签
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="http://www.myalger.ml/about" class="menu gt-a-link">
-                            关于
-                        </a>
-                    
-                </div>
-            
-        </div>
-        <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1620746344538" action="/search/index.html">
-                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
-                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
-            </form>
-        </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="http://www.myalger.ml/about" class="site-nav">
+            关于
+          </a>
+        
+      
     </div>
-</nav>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      春风得意马蹄疾,一日看尽长安花.
 
-        <div class="post-container">
-            <div class="post-detail gt-bg-theme-color-second">
-                <article class="gt-post-content">
-                    <h2 class="post-title">
-                        HTML+CSS 模仿商品展示 💻
-                    </h2>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            · 2020-02-13 ·
-                        </time>
-                        
-                        <a href="http://blog.myalger.top/FoJvIOEID/" class="post-tags">
-                            # HTML
-                        </a>
-                        
-                        <a href="http://blog.myalger.top/Io18193yza/" class="post-tags">
-                            # CSS
-                        </a>
-                        
-                    </div>
-                    <div class="post-content">
-                        <p>💁今天我们来实现一个简单的<strong><strong>商品展示</strong></strong>小页面</p>
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://blog.myalger.top/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">HTML+CSS 模仿商品展示 💻</h2>
+            <div class="post-date">2020-02-13</div>
+            
+              <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/04/1D9VhT.gif')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>💁今天我们来实现一个简单的<strong><strong>商品展示</strong></strong>小页面</p>
 <p>用到的知识主要是<code>:hover</code>和<code>position</code></p>
 <!-- more -->
 <h2 id="html代码️">HTML代码<strong>⬇️</strong></h2>
@@ -256,83 +255,53 @@
 </code></pre>
 <p><a href="http://alger.cf/practice/%E4%BE%8B%E5%AD%90/CSS%E5%AE%9E%E7%8E%B0%E5%A4%A9%E7%8C%AB%E5%95%86%E5%93%81%E6%A0%B7%E5%BC%8F.html">👓展示页面</a></p>
 
-                    </div>
-                </article>
             </div>
-
+            
+              <div class="tag-container">
+                
+                  <a href="http://blog.myalger.top/FoJvIOEID/" class="tag">
+                    HTML
+                  </a>
+                
+                  <a href="http://blog.myalger.top/Io18193yza/" class="tag">
+                    CSS
+                  </a>
+                
+              </div>
+            
             
 
             
-            <span id="/HTMW_GE/" class="leancloud_visitors" data-flag-title="HTML+CSS 模仿商品展示 💻">
-                <em class="post-meta-item-text">阅读量 </em>
-                <i class="leancloud-visitors-count">0</i>
-            </span>
-            
 
-            
-
-            
-            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
-
-<style>
-	div#vcomments{
-		width:100%;
-		max-width: 1000px;
-		padding: 2.5%
-	}
-</style>
-
-
-	<div id="vcomments"></div>
-
-<script>
-	new Valine({
-		el: '#vcomments',
-		appId: 'zSod8O6f9ppLFYxB5PgGNotJ-gzGzoHsz',
-		appKey: 'zPFYmL2RAeARE6sTWFnHfJg7',
-		avatar: 'retro',
-		pageSize: 10,
-		recordIp: true,
-		placeholder: 'Just Go Go',
-		visitor: true,
-	});
-</script>
-
-            
-
-            <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">春风得意马蹄疾,一日看尽长安花.
-</div>
-    <div class="social-container">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    </div>
-    <div class="footer-info">
-        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-    <div>
-        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
-                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="http://blog.myalger.top/atom.xml" target="_blank">RSS</a></a>
-    </div>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
+          </div>
 
         </div>
+      </div>
     </div>
-</body>
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
 </html>

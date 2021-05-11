@@ -1,113 +1,115 @@
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta name="description" content="教你用代码写一个实时疫情图😷--Alger的博客">
-    <meta name="keywords"
-        content="Alger,Alger的博客,Alger's blog,alger,alger的博客,html,css,vue,刘俊杰的博客,刘俊杰,liujunjie,Alger开发,Android,刘先生">
-
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="utf-8" >
 
 <title>教你用代码写一个实时疫情图😷 | Alger&#39;s blog</title>
 
-<link rel="shortcut icon" href="http://blog.myalger.top/favicon.ico?v=1620746344538">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+<link rel="shortcut icon" href="http://blog.myalger.top/favicon.ico?v=1620747169288">
 <link rel="stylesheet" href="http://blog.myalger.top/styles/main.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
-
-<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
-<!-- DEMO JS -->
-<!--<script src="media/scripts/index.js"></script>-->
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
-</head>
 
-<body>
-    <div class="main gt-bg-theme-color-first">
-        <nav class="navbar navbar-expand-lg">
-    <div class="navbar-brand">
-        <img class="user-avatar" src="/images/avatar.png" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            Alger&#39;s blog
-        </div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="🤧这两天疫情越来越严重，各个大公司都做了实时疫情图，这里来教一下大家如何用代码来实现
+
+
+🔎🔎    效果网址
+看起来不错吧，那我们来实时的撸一个。
+不会代码的同学可以跳过这儿，直接到文章末尾，有教你怎么调用的。
+绘制中国地图
+首先，..." />
+    <meta name="keywords" content="Share" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://blog.myalger.top">
+        <img src="http://blog.myalger.top/images/avatar.png?v=1620747169288" class="site-logo">
+        <h1 class="site-title">Alger&#39;s blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
-            
-                <div class="nav-item">
-                    
-                        <a href="/" class="menu gt-a-link">
-                            首页
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/archives" class="menu gt-a-link">
-                            归档
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/tags" class="menu gt-a-link">
-                            标签
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="http://www.myalger.ml/about" class="menu gt-a-link">
-                            关于
-                        </a>
-                    
-                </div>
-            
-        </div>
-        <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1620746344538" action="/search/index.html">
-                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
-                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
-            </form>
-        </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="http://www.myalger.ml/about" class="site-nav">
+            关于
+          </a>
+        
+      
     </div>
-</nav>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      春风得意马蹄疾,一日看尽长安花.
 
-        <div class="post-container">
-            <div class="post-detail gt-bg-theme-color-second">
-                <article class="gt-post-content">
-                    <h2 class="post-title">
-                        教你用代码写一个实时疫情图😷
-                    </h2>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            · 2020-03-13 ·
-                        </time>
-                        
-                        <a href="http://blog.myalger.top/G4NR921eB/" class="post-tags">
-                            # Share
-                        </a>
-                        
-                    </div>
-                    <div class="post-content">
-                        <p>🤧这两天疫情越来越严重，各个大公司都做了<strong>实时疫情图</strong>，这里来教一下大家如何用代码来实现</p>
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://blog.myalger.top/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">教你用代码写一个实时疫情图😷</h2>
+            <div class="post-date">2020-03-13</div>
+            
+              <div class="feature-container" style="background-image: url('https://s2.ax1x.com/2020/02/04/1D0mGR.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>🤧这两天疫情越来越严重，各个大公司都做了<strong>实时疫情图</strong>，这里来教一下大家如何用代码来实现</p>
 <!-- more -->
 <figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/02/04/1DtjL4.png" alt="效果" loading="lazy"></figure>
 <p>🔎🔎    <strong><a href="http://alger.cf/practice/">效果网址</a></strong></p>
@@ -177,90 +179,58 @@ $list = json_decode($result[1]);
 <pre><code class="language-html">&lt;iframe src=&quot;https://www.lovestu.com/api/project/cnmapyinqing/obj.php&quot; height=&quot;500&quot; frameborder=&quot;no&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt; &lt;/iframe&gt;
 </code></pre>
 
-                    </div>
-                </article>
             </div>
-
             
-            <div class="next-post">
-                <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="http://blog.myalger.top/CSS_EF/" class="post-title gt-a-link">
+              <div class="tag-container">
+                
+                  <a href="http://blog.myalger.top/G4NR921eB/" class="tag">
+                    Share
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="http://blog.myalger.top/CSS_EF/">
+                  <h3 class="post-title">
                     CSS动画制作旋转木马🦄
+                  </h3>
                 </a>
-            </div>
-            
-
-            
-            <span id="/NEGKE_EGG/" class="leancloud_visitors" data-flag-title="教你用代码写一个实时疫情图😷">
-                <em class="post-meta-item-text">阅读量 </em>
-                <i class="leancloud-visitors-count">0</i>
-            </span>
+              </div>
             
 
             
 
-            
-            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
-
-<style>
-	div#vcomments{
-		width:100%;
-		max-width: 1000px;
-		padding: 2.5%
-	}
-</style>
-
-
-	<div id="vcomments"></div>
-
-<script>
-	new Valine({
-		el: '#vcomments',
-		appId: 'zSod8O6f9ppLFYxB5PgGNotJ-gzGzoHsz',
-		appKey: 'zPFYmL2RAeARE6sTWFnHfJg7',
-		avatar: 'retro',
-		pageSize: 10,
-		recordIp: true,
-		placeholder: 'Just Go Go',
-		visitor: true,
-	});
-</script>
-
-            
-
-            <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">春风得意马蹄疾,一日看尽长安花.
-</div>
-    <div class="social-container">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    </div>
-    <div class="footer-info">
-        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-    <div>
-        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
-                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="http://blog.myalger.top/atom.xml" target="_blank">RSS</a></a>
-    </div>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
+          </div>
 
         </div>
+      </div>
     </div>
-</body>
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
 </html>
